@@ -1,6 +1,6 @@
 import React from "react";
 
-import ThemeSelector from "@/components/theme-selector/ThemeSelector";
+// import ThemeSelector from "@/components/theme-selector/ThemeSelector";
 
 /**
  * Refs. about the grid layout
