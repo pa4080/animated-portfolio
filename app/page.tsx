@@ -10,15 +10,16 @@ import ThemeSelector from "@/components/theme-selector/ThemeSelector";
  */
 const Home: React.FC = () => {
 	return (
-		// Most of these should be moved in the ./layout.tsx
-		<main className="container p-2 grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-2 lg:gap-4">
-			<div className="lg:col-span-2 bg-purple-200">
-				<ThemeSelector />
-			</div>
-
-			<div className="p-2 hidden lg:flex flex-col justify-between bg-green-200">left</div>
-			<div className="bg-blue-200">main</div>
-		</main>
+		<div>
+			<section>Hero</section>
+			<section>Parallax</section>
+			<section>Services</section>
+			<section>Parallax</section>
+			<section>Portfolio1</section>
+			<section>Portfolio2</section>
+			<section>Portfolio3</section>
+			<section>Contracts</section>
+		</div>
 	);
 };
 

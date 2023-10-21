@@ -2,7 +2,8 @@ import React from "react";
 // import { Analytics } from "@vercel/analytics/react";
 import { cookies } from "next/headers";
 
-import "./globals.css";
+// import "./globals.css";
+import "./globals.scss";
 
 import { inter, roboto_slab, unicephalon } from "@/app/fonts";
 import manifest from "@/public/manifest.json";
