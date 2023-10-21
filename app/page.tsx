@@ -1,6 +1,6 @@
 import React from "react";
 
-// import ThemeSelector from "@/components/theme-selector/ThemeSelector";
+import NavBar from "@/components/nav-bar/NavBar";
 
 /**
  * Refs. about the grid layout
@@ -11,12 +11,15 @@ import React from "react";
 const Home: React.FC = () => {
 	return (
 		<div>
+			{/* <div className="sticky top-6 w-full flex items-center justify-end pr-6"></div> */}
 			<section className="font text-3xl">
+				<NavBar />
 				<p className="font-unicephalon">Hero</p>
 				<p className="font-robotoSlab">Hero</p>
 				<p className="font-dmSans">Hero</p>
 				<p className="font-inter">Hero</p>
 				<p>Hero</p>
+				<a href="#">Hero a</a>
 			</section>
 			<section>Parallax</section>
 			<section>Services</section>

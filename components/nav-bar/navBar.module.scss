@@ -1,0 +1,7 @@
+.navBar {
+	@apply bg-slate-300;
+
+	@media screen and (min-width: 768px) {
+		@apply bg-slate-800;
+	}
+}

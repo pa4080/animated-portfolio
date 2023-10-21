@@ -47,7 +47,8 @@
 	// https://youtu.be/3_-Je5XpbqY?t=688
 	// https://stackoverflow.com/a/76125894/6543935
 	// https://github.com/microsoft/vscode/issues/170589
-	"css.customData": [".vscode/css-linting-vscode-workarounds.json"],
+	// https://github.com/tailwindlabs/tailwindcss/discussions/5258#discussioncomment-1979394
+	"css.customData": [".vscode/css-container.json", ".vscode/css-tailwind.json"],
 	"editor.guides.bracketPairs": true,
 	"editor.guides.highlightActiveBracketPair": true,
 	"editor.guides.highlightActiveIndentation": true,
@@ -69,5 +70,6 @@
 		"*.module.styl"
 	],
 	"reactTsScss.references": true,
-	"reactTsScss.codelens": true
+	"reactTsScss.codelens": true,
+	"cssModules.camelCase": true
 }

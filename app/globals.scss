@@ -1,4 +1,63 @@
-// @import "./globals.css";
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable selector-id-pattern */
+/* stylelint-disable at-rule-no-unknown */
+/* stylelint-disable function-no-unknown */
+
+/* Clues: theme("screens.xs420"); theme("colors.mlt-purple-bright_tr1"); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	/* https://www.w3schools.com/colors/colors_hsl.asp */
+	:root {
+		--background: 240 10% 95%; /* hsl(240 10% 95%) */
+		--foreground: 240 41% 8%; /* hsl(240 41% 8%) */
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 84% 4.9%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 222.2 84% 4.9%;
+		--primary: 222.2 47.4% 11.2%;
+		--primary-foreground: 210 40% 98%;
+		--secondary: 210 40% 96.1%;
+		--secondary-foreground: 222.2 47.4% 11.2%;
+		--muted: 210 40% 96.1%;
+		--muted-foreground: 215.4 16.3% 46.9%;
+		--accent: 38 100% 50%; /* hsl(42, 100%, 50%) #ffa200 hsl(38, 100%, 50%) */
+		--accent-foreground: 0, 0%, 24%; /* hsl(0, 0%, 24%) */
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 210 40% 98%;
+		--border: 214.3 31.8% 91.4%;
+		--input: 217.24deg 32.58% 17.45%; /* hsl(217 32% 17%) */
+		--ring: 42 100% 50%; /* hsl(42, 100%, 50%)  hsl(46, 100%, 50%) */
+		--radius: 0.5rem;
+		--scrollbar-width: 16px;
+	}
+
+	[data-theme="dark"],
+	.dark {
+		--background: 240 41% 8%; /* hsl(240 41% 8%) */
+		--foreground: 240 10% 95%; /* hsl(240 10% 95%) */
+		--card: 222.2 84% 4.9%;
+		--card-foreground: 210 40% 98%;
+		--popover: 222.2 84% 4.9%;
+		--popover-foreground: 210 40% 98%;
+		--primary: 210 40% 98%;
+		--primary-foreground: 222.2 47.4% 11.2%;
+		--secondary: 217.2 32.6% 17.5%;
+		--secondary-foreground: 210 40% 98%;
+		--muted: 217.2 32.6% 17.5%;
+		--muted-foreground: 215 20.2% 65.1%;
+		--accent: 38 100% 50%; /* hsl(42, 100%, 50%) #ffa200 hsl(38, 100%, 50%) */
+		--accent-foreground: 210 40% 98%;
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 210 40% 98%;
+		--border: 217.2 32.6% 17.5%;
+		--input: 217.2 32.6% 17.5%; /* hsl(217.2, 32.6%, 17.5%) */
+		--ring: 42 100% 50%; /* hsl(42, 100%, 50%)  hsl(46, 100%, 50%) */
+	}
+}
 
 $background: hsl(var(--background));
 $foreground: hsl(var(--foreground));
@@ -27,6 +86,111 @@ $font-dmSans: var(--font-dm-sans), "sans-serif";
 $font-robotoSlab: var(--font-roboto-slab), "serif";
 $font-unicephalon: var(--font-unicephalon), "sans-serif";
 
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+
+		min-width: 320px;
+	}
+}
+
+body {
+	min-width: 300px;
+}
+
+[type="text"]:focus,
+input:where(:not([type])):focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="time"]:focus,
+[type="week"]:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+	--tw-ring-color: hsl(42deg 100% 50%);
+
+	border-color: hsl(42deg 100% 50%);
+}
+
+input:placeholder-shown {
+	text-overflow: ellipsis;
+}
+
+/* Trick the hidden scroll of Radix Select */
+body [data-radix-select-viewport] {
+	-webkit-overflow-scrolling: scroll;
+	scrollbar-width: 2rem;
+	-ms-overflow-style: scroll;
+}
+
+body [data-radix-select-viewport]::-webkit-scrollbar {
+	display: inherit;
+}
+
+/* Outline */
+:focus-visible,
+:focus {
+	outline-color: theme("colors.ring");
+}
+
+/* Text selection */
+:selection {
+	background: hsl(var(--ring));
+	color: #fff;
+}
+
+/* Scroll bars */
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	scrollbar-color: theme("colors.gray.300") transparent;
+	scrollbar-width: auto;
+}
+
+*::-webkit-scrollbar {
+	width: calc(var(--scrollbar-width) / 1.1);
+	height: calc(var(--scrollbar-width) / 1.1);
+	background-color: transparent;
+}
+
+*::-webkit-scrollbar-track {
+	border-radius: var(--scrollbar-width);
+}
+
+*::-webkit-scrollbar-thumb {
+	height: 52px;
+	border: calc(var(--scrollbar-width) / 4.2) solid transparent;
+	border-radius: var(--scrollbar-width);
+	background-color: theme("colors.gray.300");
+	background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background-color: theme("colors.accent.DEFAULT");
+}
+
+*::-webkit-scrollbar-corner {
+	background-color: theme("colors.accent.DEFAULT");
+}
+
+a:hover {
+	color: hsl(var(--accent));
+}
+
+/* sections scroll */
 html {
 	scroll-snap-type: y mandatory;
 	scroll-behavior: smooth;
@@ -35,5 +199,31 @@ html {
 section {
 	height: 100vh;
 	scroll-snap-align: center;
-	font-family: $font-robotoSlab;
+}
+
+/**
+ * NOTE: using syntax with exclamation mark
+ * like "hover:!bg-slate-500",
+ * causes an error in the .scss files!
+ */
+
+/* buttons - used in the theme selector */
+.btn_next_prev {
+	@apply rounded-lg w-full xs:w-24 font-semibold text-lg gap-4 xs:gap-1
+	transition-colors duration-200 flex items-center justify-center xs:justify-between
+	hover:text-background disabled:text-background text-foreground
+	bg-slate-300 hover:bg-slate-500
+	dark:bg-slate-700 dark:hover:bg-slate-200;
+}
+
+.btn_ui {
+	@apply rounded-lg border-0 bg-slate-300 dark:bg-slate-800 hover:text-background transition-colors duration-300 dark:hover:bg-accent cursor-pointer;
+}
+
+.btn_ui_div {
+	@apply rounded-lg text-lg flex items-center justify-between h-full px-2 py-2 cursor-pointer;
+}
+
+.btn_ui_div_colors {
+	@apply bg-slate-300 hover:bg-slate-500 dark:bg-slate-800 dark:hover:bg-slate-700;
 }
