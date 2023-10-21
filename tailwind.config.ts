@@ -30,6 +30,7 @@ const tailwindConfig: import("tailwindcss").Config = {
 			},
 			fontFamily: {
 				inter: ["var(--font-inter)", "sans-serif"],
+				dmSans: ["var(--font-dm-sans)", "sans-serif"],
 				robotoSlab: ["var(--font-roboto-slab)", "sans-serif"],
 				unicephalon: ["var(--font-unicephalon)", "sans-serif"],
 			},

@@ -2,7 +2,13 @@
  * @see https://nextjs.org/docs/app/building-your-application/optimizing/fonts
  */
 import localFont from "next/font/local";
-import { Inter, Roboto_Slab } from "next/font/google";
+import { Inter, Roboto_Slab, DM_Sans } from "next/font/google";
+
+export const dm_sans = DM_Sans({
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-dm-sans",
+});
 
 export const inter = Inter({
 	subsets: ["latin"],

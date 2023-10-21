@@ -11,7 +11,13 @@ import React from "react";
 const Home: React.FC = () => {
 	return (
 		<div>
-			<section>Hero</section>
+			<section className="font text-3xl">
+				<p className="font-unicephalon">Hero</p>
+				<p className="font-robotoSlab">Hero</p>
+				<p className="font-dmSans">Hero</p>
+				<p className="font-inter">Hero</p>
+				<p>Hero</p>
+			</section>
 			<section>Parallax</section>
 			<section>Services</section>
 			<section>Parallax</section>
