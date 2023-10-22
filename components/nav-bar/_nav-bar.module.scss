@@ -1,6 +1,11 @@
 @import "@/app/globals.variables.module.scss";
 
 .navBar {
+	@apply w-full h-24;
+
+	.wrapper {
+		@apply max-w-screen-1xl flex items-center justify-between p-2 mx-auto h-full;
+	}
 }
 
 .logo {

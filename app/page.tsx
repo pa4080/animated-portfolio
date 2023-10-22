@@ -15,11 +15,6 @@ const Home: React.FC = () => {
 			<section className="">
 				<NavBar />
 				<p className="font-unicephalon">Hero</p>
-				<p className="font-robotoSlab">Hero</p>
-				<p className="font-dmSans">Hero</p>
-				<p className="font-inter">Hero</p>
-				<p>Hero</p>
-				<a href="#">Hero a</a>
 			</section>
 			<section>Parallax</section>
 			<section>Services</section>

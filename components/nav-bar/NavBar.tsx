@@ -14,8 +14,9 @@ interface Props {
 
 const NavBar: React.FC<Props> = ({ className }) => {
 	return (
-		<>
-			<div className={cn("flex items-center justify-between p-2", styles.navBar, className)}>
+		<div className={cn(styles.navBar, className)}>
+			{/* Sidebar */}
+			<div className={styles.wrapper}>
 				<Nav_Logo />
 
 				<div className="flex items-center justify-end gap-4">
@@ -24,7 +25,7 @@ const NavBar: React.FC<Props> = ({ className }) => {
 					<ThemeSelector />
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

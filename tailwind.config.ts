@@ -27,6 +27,7 @@ const tailwindConfig: import("tailwindcss").Config = {
 				"4xs": "380px",
 				"5xs": "360px",
 				"6xs": "320px",
+				"1xl": "1366px",
 			},
 			fontFamily: {
 				inter: ["var(--font-inter)", "sans-serif"],
