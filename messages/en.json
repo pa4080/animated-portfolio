@@ -1,6 +1,7 @@
 {
 	"Home": {
-		"title": "Game hub"
+		"title": "Portfolio",
+		"description": "Animated Portfolio"
 	},
 	"Theme": {
 		"light": "Light",

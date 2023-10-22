@@ -1,0 +1,35 @@
+@import "@/app/globals.variables.module.scss";
+
+.navBar {
+}
+
+.logo {
+	@apply flex items-center justify-start gap-1 drop-shadow-xl;
+	font-size: 1.65rem /* 24px */;
+	line-height: 2rem /* 32px */;
+
+	.logoImageContainer {
+		@apply inline-flex items-center justify-center rounded-md border-input h-11 w-11 flex-shrink-0;
+
+		.logoImage {
+			@apply h-11 w-11 drop-shadow-xl;
+		}
+	}
+
+	.logoText {
+		@apply font-unicephalon text-accent tracking-wider text-left line-clamp-1;
+		transform: translateY(0.06rem);
+		display: none;
+		@media screen and (min-width: 480px) {
+			display: block;
+		}
+	}
+}
+
+.socialLinks {
+	@apply text-2xl transition-colors duration-150 cursor-pointer flex gap-3 text-foreground/60;
+
+	> a {
+		@apply hover:text-accent;
+	}
+}

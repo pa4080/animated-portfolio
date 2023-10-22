@@ -24,13 +24,13 @@
 		--secondary-foreground: 222.2 47.4% 11.2%;
 		--muted: 210 40% 96.1%;
 		--muted-foreground: 215.4 16.3% 46.9%;
-		--accent: 38 100% 50%; /* hsl(42, 100%, 50%) #ffa200 hsl(38, 100%, 50%) */
+		--accent: 38 100% 50%; /* hsl(32, 100%, 50%) #ffa200 hsl(38, 100%, 50%) */
 		--accent-foreground: 0, 0%, 24%; /* hsl(0, 0%, 24%) */
 		--destructive: 0 84.2% 60.2%;
 		--destructive-foreground: 210 40% 98%;
 		--border: 214.3 31.8% 91.4%;
 		--input: 217.24deg 32.58% 17.45%; /* hsl(217 32% 17%) */
-		--ring: 42 100% 50%; /* hsl(42, 100%, 50%)  hsl(46, 100%, 50%) */
+		--ring: 42 100% 50%; /* hsl(38, 100%, 50%)  hsl(46, 100%, 50%) */
 		--radius: 0.5rem;
 		--scrollbar-width: 16px;
 	}
@@ -49,42 +49,17 @@
 		--secondary-foreground: 210 40% 98%;
 		--muted: 217.2 32.6% 17.5%;
 		--muted-foreground: 215 20.2% 65.1%;
-		--accent: 38 100% 50%; /* hsl(42, 100%, 50%) #ffa200 hsl(38, 100%, 50%) */
+		--accent: 258.31deg 89.53% 66.27%; /* #8b5cf6 */
 		--accent-foreground: 210 40% 98%;
 		--destructive: 0 62.8% 30.6%;
 		--destructive-foreground: 210 40% 98%;
 		--border: 217.2 32.6% 17.5%;
 		--input: 217.2 32.6% 17.5%; /* hsl(217.2, 32.6%, 17.5%) */
-		--ring: 42 100% 50%; /* hsl(42, 100%, 50%)  hsl(46, 100%, 50%) */
+		--ring: 255.14deg 91.74% 76.27%; /* #a78bfa */
 	}
 }
 
-$background: hsl(var(--background));
-$foreground: hsl(var(--foreground));
-$card: hsl(var(--card));
-$card-foreground: hsl(var(--card-foreground));
-$popover: hsl(var(--popover));
-$popover-foreground: hsl(var(--popover-foreground));
-$primary: hsl(var(--primary));
-$primary-foreground: hsl(var(--primary-foreground));
-$secondary: hsl(var(--secondary));
-$secondary-foreground: hsl(var(--secondary-foreground));
-$muted: hsl(var(--muted));
-$muted-foreground: hsl(var(--muted-foreground));
-$accent: hsl(var(--accent));
-$accent-foreground: hsl(var(--accent-foreground));
-$destructive: hsl(var(--destructive));
-$destructive-foreground: hsl(var(--destructive-foreground));
-$border: hsl(var(--border));
-$input: hsl(var(--input));
-$ring: hsl(var(--ring));
-$radius: hsl(var(--radius));
-$scrollbar-width: hsl(var(--scrollbar-width));
-
-$font-inter: var(--font-inter), "sans-serif";
-$font-dmSans: var(--font-dm-sans), "sans-serif";
-$font-robotoSlab: var(--font-roboto-slab), "serif";
-$font-unicephalon: var(--font-unicephalon), "sans-serif";
+@import "./globals.variables.module.scss";
 
 @layer base {
 	* {
@@ -199,6 +174,23 @@ html {
 section {
 	height: 100vh;
 	scroll-snap-align: center;
+}
+
+/* Logo */
+.cls-1 {
+	fill: none;
+}
+.cls-2 {
+	fill: #787878;
+}
+.cls-3 {
+	fill: #b4b4b4;
+}
+.cls-4 {
+	fill: #a0a0a0;
+}
+.cls-5 {
+	fill: $accent;
 }
 
 /**

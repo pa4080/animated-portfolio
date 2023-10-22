@@ -12,7 +12,7 @@ const Home: React.FC = () => {
 	return (
 		<div>
 			{/* <div className="sticky top-6 w-full flex items-center justify-end pr-6"></div> */}
-			<section className="font text-3xl">
+			<section className="">
 				<NavBar />
 				<p className="font-unicephalon">Hero</p>
 				<p className="font-robotoSlab">Hero</p>
