@@ -19,7 +19,7 @@ const NavBar: React.FC<Props> = ({ className }) => {
 			<div className={styles.wrapper}>
 				<Nav_Logo />
 
-				<div className="flex items-center justify-end gap-4">
+				<div className="flex items-center justify-end gap-6">
 					<SocialLinks />
 
 					<ThemeSelector />

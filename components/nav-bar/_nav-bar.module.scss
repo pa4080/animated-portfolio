@@ -9,7 +9,7 @@
 }
 
 .logo {
-	@apply flex items-center justify-start gap-1 drop-shadow-xl;
+	@apply flex items-center justify-start gap-1 drop-shadow-xl select-none;
 	font-size: 1.65rem /* 24px */;
 	line-height: 2rem /* 32px */;
 
@@ -32,9 +32,9 @@
 }
 
 .socialLinks {
-	@apply text-2xl transition-colors duration-150 cursor-pointer flex gap-3 text-foreground/60;
+	@apply flex flex-row-reverse gap-4 text-foreground/60 text-2xl transition-colors duration-150;
 
 	> a {
-		@apply hover:text-accent;
+		@apply cursor-pointer hover:text-accent;
 	}
 }
