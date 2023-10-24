@@ -22,7 +22,7 @@ const NavBar: React.FC<Props> = ({ className }) => {
 				<div className="flex items-center justify-end gap-6">
 					<SocialLinks />
 
-					<ThemeSelector />
+					<ThemeSelector className="opacity-0 animate-fadeIn" />
 				</div>
 			</div>
 		</div>
