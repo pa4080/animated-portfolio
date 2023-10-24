@@ -1,6 +1,6 @@
 import React from "react";
 
-import NavBar from "@/components/nav-bar/NavBar";
+import Navbar from "@/components/navbar/Navbar";
 
 /**
  * Refs. about the grid layout
@@ -13,7 +13,7 @@ const Home: React.FC = () => {
 		<div>
 			{/* <div className="sticky top-6 w-full flex items-center justify-end pr-6"></div> */}
 			<section className="">
-				<NavBar />
+				<Navbar />
 				<p className="font-unicephalon">Hero</p>
 			</section>
 			<section>Parallax</section>

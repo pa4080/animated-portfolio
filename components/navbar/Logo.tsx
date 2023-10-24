@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import messages from "@/messages/en.json";
 import { cn } from "@/lib/cn-utils";
 
-import styles from "./_nav-bar.module.scss";
+import styles from "./_navbar.module.scss";
 
 interface Props {
 	className?: string;

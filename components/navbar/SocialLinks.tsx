@@ -7,7 +7,7 @@ import { FaLinkedin, FaUbuntu, FaGithub } from "react-icons/fa";
 
 import { cn } from "@/lib/cn-utils";
 
-import styles from "./_nav-bar.module.scss";
+import styles from "./_navbar.module.scss";
 
 interface Props {
 	className?: string;
