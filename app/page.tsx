@@ -1,5 +1,7 @@
 import React from "react";
 
+import Hero from "@/components/hero/Hero";
+
 import Navbar from "@/components/navbar/Navbar";
 
 /**
@@ -14,6 +16,7 @@ const Home: React.FC = () => {
 			{/* <div className="sticky top-6 w-full flex items-center justify-end pr-6"></div> */}
 			<section id="Homepage">
 				<Navbar />
+				<Hero />
 			</section>
 			<section id="Services">Services</section>
 			<section id="Portfolio">Portfolio</section>

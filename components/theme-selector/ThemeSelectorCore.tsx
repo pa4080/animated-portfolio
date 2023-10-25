@@ -70,7 +70,7 @@ const ThemeSelectorCore: React.FC<Props> = ({ theme, mode }) => {
 			<DropdownMenuTrigger asChild>
 				<Button
 					aria-label={messages.Theme.themeSelector}
-					className="btn_ui relative"
+					className="btn_ui hover:text-backgrounds relative"
 					name={messages.Theme.themeSelector}
 					size="icon"
 					variant="outline"
