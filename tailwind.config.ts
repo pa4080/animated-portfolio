@@ -27,10 +27,12 @@ const tailwindConfig: import("tailwindcss").Config = {
 				"4xs": "380px",
 				"5xs": "360px",
 				"6xs": "320px",
+				"1xl": "1366px",
 			},
 			fontFamily: {
 				inter: ["var(--font-inter)", "sans-serif"],
-				robotoSlab: ["var(--font-roboto-slab)", "sans-serif"],
+				dmSans: ["var(--font-dm-sans)", "sans-serif"],
+				robotoSlab: ["var(--font-roboto-slab)", "serif"],
 				unicephalon: ["var(--font-unicephalon)", "sans-serif"],
 			},
 			colors: {
@@ -84,10 +86,16 @@ const tailwindConfig: import("tailwindcss").Config = {
 					from: { height: "var(--radix-accordion-content-height)" },
 					to: { height: "0" },
 				},
+				fadeIn: {
+					"0%": { opacity: "0%" },
+					"20%": { opacity: "0%" },
+					"100%": { opacity: "100%" },
+				},
 			},
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
+				fadeIn: "fadeIn 2.5s ease-in-out forwards",
 			},
 		},
 	},

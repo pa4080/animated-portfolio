@@ -3,6 +3,8 @@ import { cookies } from "next/headers";
 
 import { SunMoon } from "lucide-react";
 
+import React, { CSSProperties } from "react";
+
 import { ThemeMode, ThemeType } from "./ThemeSelectorCore";
 
 const ThemeSelectorCore = dynamic(() => import("./ThemeSelectorCore"), {
@@ -14,11 +16,20 @@ const ThemeSelectorCore = dynamic(() => import("./ThemeSelectorCore"), {
 	),
 });
 
-const ThemeSelectorLoader = () => {
+interface Props {
+	className?: string;
+	style?: CSSProperties;
+}
+
+const ThemeSelector: React.FC<Props> = ({ className, style }) => {
 	const theme = cookies().get("x-theme")?.value as ThemeType;
 	const mode = cookies().get("x-theme-mode")?.value as ThemeMode;
 
-	return <ThemeSelectorCore mode={mode} theme={theme} />;
+	return (
+		<div className={className} style={style}>
+			<ThemeSelectorCore mode={mode} theme={theme} />
+		</div>
+	);
 };
 
-export default ThemeSelectorLoader;
+export default ThemeSelector;

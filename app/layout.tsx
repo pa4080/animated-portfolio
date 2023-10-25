@@ -2,9 +2,9 @@ import React from "react";
 // import { Analytics } from "@vercel/analytics/react";
 import { cookies } from "next/headers";
 
-import "./globals.css";
+import "./globals.scss";
 
-import { inter, roboto_slab, unicephalon } from "@/app/fonts";
+import { inter, roboto_slab, unicephalon, dm_sans } from "@/app/fonts";
 import manifest from "@/public/manifest.json";
 import { AppContextProvider } from "@/contexts/AppContext";
 
@@ -46,8 +46,8 @@ const RootLayout: React.FC<Props> = ({ children }) => {
 		<html suppressHydrationWarning className={switchTheme()} lang="en">
 			<body
 				className={
-					`${inter.className} ${inter.variable} ` +
-					`${roboto_slab.variable} ${unicephalon.variable} `
+					`${dm_sans.className} + ${dm_sans.variable} ` +
+					`${inter.variable} ${roboto_slab.variable} ${unicephalon.variable} `
 				}
 			>
 				<AppContextProvider>{children}</AppContextProvider>

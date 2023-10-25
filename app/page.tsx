@@ -1,6 +1,6 @@
 import React from "react";
 
-import ThemeSelector from "@/components/theme-selector/ThemeSelector";
+import Navbar from "@/components/navbar/Navbar";
 
 /**
  * Refs. about the grid layout
@@ -10,14 +10,15 @@ import ThemeSelector from "@/components/theme-selector/ThemeSelector";
  */
 const Home: React.FC = () => {
 	return (
-		// Most of these should be moved in the ./layout.tsx
-		<main className="container p-2 grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-2 lg:gap-4">
-			<div className="lg:col-span-2 bg-purple-200">
-				<ThemeSelector />
-			</div>
-
-			<div className="p-2 hidden lg:flex flex-col justify-between bg-green-200">left</div>
-			<div className="bg-blue-200">main</div>
+		<main>
+			{/* <div className="sticky top-6 w-full flex items-center justify-end pr-6"></div> */}
+			<section id="Homepage">
+				<Navbar />
+			</section>
+			<section id="Services">Services</section>
+			<section id="Portfolio">Portfolio</section>
+			<section id="Contact">Contact</section>
+			<section id="About">About</section>
 		</main>
 	);
 };

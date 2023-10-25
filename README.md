@@ -27,3 +27,8 @@ npm run dev
 ```
 
 Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
+
+## Reference manual
+
+- TailwindCSS: [Using with Preprocessors](vscodethemes.com/e/juliettepretot.lucy-vscode/lucy?language=javascript)
+- [Framer Motion](https://www.framer.com/)
