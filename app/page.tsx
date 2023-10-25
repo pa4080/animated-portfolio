@@ -10,20 +10,16 @@ import Navbar from "@/components/navbar/Navbar";
  */
 const Home: React.FC = () => {
 	return (
-		<div>
+		<main>
 			{/* <div className="sticky top-6 w-full flex items-center justify-end pr-6"></div> */}
-			<section className="">
+			<section id="Homepage">
 				<Navbar />
-				<p className="font-unicephalon">Hero</p>
 			</section>
-			<section>Parallax</section>
-			<section>Services</section>
-			<section>Parallax</section>
-			<section>Portfolio1</section>
-			<section>Portfolio2</section>
-			<section>Portfolio3</section>
-			<section>Contracts</section>
-		</div>
+			<section id="Services">Services</section>
+			<section id="Portfolio">Portfolio</section>
+			<section id="Contact">Contact</section>
+			<section id="About">About</section>
+		</main>
 	);
 };
 

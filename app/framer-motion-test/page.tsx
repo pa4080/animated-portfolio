@@ -43,7 +43,10 @@ const FramerMotionTestPage: React.FC = () => {
 			<motion.ul animate="visible" initial="hidden" variants={variants}>
 				{demos.map((demo, index) => (
 					<motion.li key={index} className="mt-2" variants={variants}>
-						<Link className="flex gap-1 items-center" href={`${pathname}/${demo.route}`}>
+						<Link
+							className="flex gap-1 items-center hover:translate-x-2 transition-transform duration-300"
+							href={`${pathname}/${demo.route}`}
+						>
 							<span className="text-sm">
 								<FaChevronRight />
 							</span>
@@ -57,7 +60,10 @@ const FramerMotionTestPage: React.FC = () => {
 			<motion.ul animate="visible" initial="hidden" variants={variants_with_dynamics}>
 				{demos.map((demo, index) => (
 					<motion.li key={index} className="mt-2" custom={index} variants={variants_with_dynamics}>
-						<Link className="flex gap-1 items-center" href={`${pathname}/${demo.route}`}>
+						<Link
+							className="flex gap-1 items-center hover:translate-x-2 transition-transform duration-300"
+							href={`${pathname}/${demo.route}`}
+						>
 							<span className="text-sm">
 								<FaChevronRight />
 							</span>

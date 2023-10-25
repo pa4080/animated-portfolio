@@ -2,10 +2,12 @@ import React from "react";
 
 import { cn } from "@/lib/cn-utils";
 
+import Sidebar from "@/components/sidebar/Sidebar";
+import ThemeSelector from "@/components/theme-selector/ThemeSelector";
+
 import styles from "./_navbar.module.scss";
 import Nav_Logo from "./Logo";
 
-import ThemeSelector from "../theme-selector/ThemeSelector";
 import SocialLinks from "./SocialLinks";
 
 interface Props {
@@ -15,7 +17,6 @@ interface Props {
 const Navbar: React.FC<Props> = ({ className }) => {
 	return (
 		<div className={cn(styles.Navbar, className)}>
-			{/* <Sidebar /> */}
 			<div className={styles.wrapper}>
 				<Nav_Logo />
 
@@ -25,6 +26,7 @@ const Navbar: React.FC<Props> = ({ className }) => {
 					<ThemeSelector className="opacity-0 animate-fadeIn" />
 				</div>
 			</div>
+			<Sidebar />
 		</div>
 	);
 };
