@@ -219,3 +219,17 @@ section {
 .btn_ui_div_colors {
 	@apply bg-slate-300 hover:bg-slate-500 dark:bg-slate-800 dark:hover:bg-slate-700;
 }
+
+/* framer motion tests */
+html,
+body {
+	height: 100% !important;
+}
+
+.course {
+	@apply flex w-full h-full justify-center items-center;
+
+	.box {
+		@apply w-40 h-40 bg-slate-500 cursor-pointer;
+	}
+}

@@ -4,9 +4,15 @@ import { cookies } from "next/headers";
 
 import "./globals.scss";
 
+import Link from "next/link";
+
+import { RiArrowGoBackFill } from "react-icons/ri";
+
 import { inter, roboto_slab, unicephalon, dm_sans } from "@/app/fonts";
 import manifest from "@/public/manifest.json";
 import { AppContextProvider } from "@/contexts/AppContext";
+
+import ThemeSelector from "@/components/theme-selector/ThemeSelector";
 
 import type { Metadata } from "next";
 
@@ -50,8 +56,21 @@ const RootLayout: React.FC<Props> = ({ children }) => {
 					`${inter.variable} ${roboto_slab.variable} ${unicephalon.variable} `
 				}
 			>
-				<AppContextProvider>{children}</AppContextProvider>
-				{/* <Analytics /> */}
+				<div className="h-full">
+					<div className="sticky top-0">
+						<div className="absolute top-8 right-8 z-1 flex gap-4">
+							<ThemeSelector className="opacity-0 animate-fadeIn" />
+
+							<Link className="text-inherit hover:text-inherit" href="/">
+								<div className="rounded-md bg-slate-600 p-2 hover:invert text-2xl">
+									<RiArrowGoBackFill />
+								</div>
+							</Link>
+						</div>
+					</div>
+					<AppContextProvider>{children}</AppContextProvider>
+					{/* <Analytics /> */}
+				</div>
 			</body>
 		</html>
 	);
