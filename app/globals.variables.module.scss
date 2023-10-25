@@ -25,7 +25,12 @@ $font-dmSans: var(--font-dm-sans), "sans-serif";
 $font-robotoSlab: var(--font-roboto-slab), "serif";
 $font-unicephalon: var(--font-unicephalon), "sans-serif";
 
+@function vh($quantity) {
+	@return calc(var(--vh, 1vh) * #{$quantity});
+}
+
 :export {
+	// colors
 	background: $background;
 	foreground: $foreground;
 	card: $card;
@@ -47,9 +52,11 @@ $font-unicephalon: var(--font-unicephalon), "sans-serif";
 	ring: $ring;
 	radius: $radius;
 	scrollbarWidth: $scrollbar-width;
-
+	// font-families
 	fontInter: $font-inter;
 	fontDmSans: $font-dmSans;
 	fontRobotoSlab: $font-robotoSlab;
 	fontUnicephalon: $font-unicephalon;
+	// functions
+	vh: vh;
 }

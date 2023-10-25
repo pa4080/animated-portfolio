@@ -166,13 +166,18 @@ a:hover {
 }
 
 /* sections scroll */
+html,
+body {
+	height: vh(100);
+}
+
 html {
 	scroll-snap-type: y mandatory;
 	scroll-behavior: smooth;
 }
 
 section {
-	height: 100vh;
+	height: vh(100);
 	scroll-snap-align: center;
 }
 

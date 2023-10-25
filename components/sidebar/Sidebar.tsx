@@ -5,9 +5,12 @@ import { Variants, motion } from "framer-motion";
 
 import { cn } from "@/lib/cn-utils";
 
+import { useActualVh } from "@/hooks/useActualVh";
+
 import styles from "./_sidebar.module.scss";
 import Links from "./Links";
 import ToggleButton from "./ToggleButton";
+import ScrollToTop from "./ScrollToTop";
 
 interface Props {
 	className?: string;
@@ -40,6 +43,8 @@ const variants: Variants = {
 const Sidebar: React.FC<Props> = ({ className }) => {
 	const [open, setOpen] = useState(false);
 
+	const { show, scrollTo } = useActualVh();
+
 	return (
 		// This animation will be applied to all children,
 		// so when it is "open" the children will choose the variant "open"
@@ -58,6 +63,7 @@ const Sidebar: React.FC<Props> = ({ className }) => {
 				<Links className={styles.links} />
 			</motion.div>
 			<ToggleButton className={styles.toggleButton} onClick={() => setOpen((prev) => !prev)} />
+			<ScrollToTop show={show} onClick={scrollTo} />
 		</motion.div>
 	);
 };

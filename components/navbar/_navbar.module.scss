@@ -1,7 +1,9 @@
 @import "@/app/globals.variables.module.scss";
 
 .Navbar {
-	@apply w-full h-24;
+	@apply w-full;
+
+	height: vh(10.5);
 
 	.wrapper {
 		@apply max-w-screen-1xl ml-20 2xl:ml-auto flex items-center justify-between p-2 mx-auto h-full z-0;
