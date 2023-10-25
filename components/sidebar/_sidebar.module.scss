@@ -23,6 +23,10 @@
 	}
 
 	.toggleButton {
-		@apply fixed w-10 h-10 left-7 top-7 rounded-full overflow-hidden flex items-center justify-center;
+		@apply fixed w-[36px] h-[36px] left-[30px] top-[30px] rounded-full overflow-hidden flex items-center justify-center;
+
+		> svg {
+			@apply scale-[85%];
+		}
 	}
 }

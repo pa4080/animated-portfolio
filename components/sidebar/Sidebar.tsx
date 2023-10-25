@@ -18,7 +18,7 @@ interface Props {
 
 const variants: Variants = {
 	open: {
-		clipPath: "circle(1200px at 50px 50px)",
+		clipPath: "circle(1200px at 48px 48px)",
 		opacity: 1,
 		transition: {
 			type: "spring",
@@ -28,7 +28,7 @@ const variants: Variants = {
 		},
 	},
 	closed: {
-		clipPath: "circle(20px at 48px 48px)",
+		clipPath: "circle(18px at 48px 48px)",
 		opacity: 1,
 		transition: {
 			type: "spring",
@@ -54,7 +54,7 @@ const Sidebar: React.FC<Props> = ({ className }) => {
 				className={cn(
 					styles.wrapper,
 					"transition-colors duration-1000 data-[state=open]:bg-foreground",
-					"data-[state=closed]:bg-orange-100 dark:data-[state=closed]:bg-violet-200"
+					"data-[state=closed]:bg-accent/60"
 				)}
 				data-state={open ? "open" : "closed"}
 				initial={variants.initial as {}}
