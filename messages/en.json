@@ -12,10 +12,6 @@
 	"Navbar": {
 		"logoDesc": "The site logo"
 	},
-	"Common": {
-		"releaseDate": "Release date",
-		"imageFor": "Image for id:"
-	},
 	"Buttons": {
 		"submit": "Submit",
 		"cancel": "Cancel",
@@ -41,61 +37,11 @@
 		"prev": "Prev",
 		"mobileMenuName": "Open mobile menu"
 	},
-	"RawgEndpoints": {
-		"creator_roles": "Creator roles",
-		"creators": "Creators",
-		"developers": "Developers",
-		"games": "Games",
-		"genres": "Genres",
-		"platforms": "Platforms",
-		"publishers": "Publishers",
-		"stores": "Stores",
-		"tags": "Tags"
-	},
-	"Platforms": {
-		"select": "Select a platform",
-		"available": "Available platforms",
-		"showAll": "All platforms",
-		"platformIconButtonName": "Platform icon button for"
-	},
-	"Sort": {
-		"sortBy": "Sort by",
-		"relevance": "Relevance",
-		"order": {
-			"asc": "Ascending",
-			"desc": "Descending"
-		},
-		"fields": {
-			"name": "Name",
-			"released": "Released",
-			"added": "Added",
-			"created": "Created",
-			"updated": "Updated",
-			"rating": "Rating",
-			"metacritic": "Metacritic"
-		}
-	},
-	"Search": {
-		"search": "Search",
-		"in": "in",
-		"all": "all",
-		"games": "games",
-		"for": "for",
-		"by": "by",
-		"sorted": "sorted",
-		"asc": "ascending",
-		"desc": "descending",
-		"order": "order",
-		"searchTextReq": "The search text must be at least 3 characters."
-	},
-	"Credits": {
-		"reportBug": "Report a bug",
-		"projectAt": "Project at",
-		"poweredBy": "Powered by"
-	},
-	"Rating": {
-		"meh": "Meh",
-		"thumbsUp": "Thumbs up",
-		"bullsEye": "Bulls eye"
+	"Hero": {
+		"modelImageAlt": "A picture of the owner of the website",
+		"scrollImageAlt": "Scroll down icon",
+		"presents": "Presents",
+		"latestProjects": "See the latest projects",
+		"contactMe": "Contact Me"
 	}
 }

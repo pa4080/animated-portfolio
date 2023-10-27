@@ -13,6 +13,7 @@
 	/* https://www.w3schools.com/colors/colors_hsl.asp */
 	:root {
 		--background: 240 10% 95%; /* hsl(240 10% 95%) */
+		--background-to: 32 26% 82%; /* hsl(32, 46%, 82%) */
 		--foreground: 240 41% 8%; /* hsl(240 41% 8%) */
 		--card: 0 0% 100%;
 		--card-foreground: 222.2 84% 4.9%;
@@ -31,6 +32,8 @@
 		--border: 214.3 31.8% 91.4%;
 		--input: 217.24deg 32.58% 17.45%; /* hsl(217 32% 17%) */
 		--ring: 42 100% 50%; /* hsl(38, 100%, 50%)  hsl(46, 100%, 50%) */
+
+		// common
 		--radius: 0.5rem;
 		--scrollbar-width: 16px;
 	}
@@ -38,6 +41,7 @@
 	[data-theme="dark"],
 	.dark {
 		--background: 240 41% 8%; /* hsl(240 41% 8%) */
+		--background-to: 240 49% 13%; /* hsl(240 49% 13%) */
 		--foreground: 240 10% 95%; /* hsl(240 10% 95%) */
 		--card: 222.2 84% 4.9%;
 		--card-foreground: 210 40% 98%;
@@ -223,4 +227,17 @@ section {
 
 .btn_ui_div_colors {
 	@apply bg-slate-300 hover:bg-slate-500 dark:bg-slate-800 dark:hover:bg-slate-700;
+}
+
+/* sections */
+body > main > section {
+	@apply px-12 overflow-hidden;
+
+	&:nth-child(odd) {
+		@apply bg-gradient-to-b from-background to-background-to;
+	}
+
+	&:nth-child(even) {
+		@apply bg-gradient-to-b from-background-to to-background;
+	}
 }

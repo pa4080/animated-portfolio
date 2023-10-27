@@ -61,6 +61,7 @@ export function useActualVh(): ReturnObj {
 		};
 
 		setWindowActualVhUnits();
+		window.addEventListener("scroll", setWindowActualVhUnits);
 		window.addEventListener("resize", setWindowActualVhUnits);
 		window.addEventListener("orientationchange", setWindowActualVhUnits);
 
@@ -74,9 +75,10 @@ export function useActualVh(): ReturnObj {
 		window.addEventListener("scroll", showFloatNav);
 
 		return () => {
-			window.removeEventListener("scroll", showFloatNav);
+			window.removeEventListener("scroll", setWindowActualVhUnits);
 			window.removeEventListener("resize", setWindowActualVhUnits);
 			window.removeEventListener("orientationchange", setWindowActualVhUnits);
+			window.removeEventListener("scroll", showFloatNav);
 		};
 	}, []);
 
