@@ -51,11 +51,7 @@ const Sidebar: React.FC<Props> = ({ className }) => {
 		// and when it is "closed" the children will choose the variant "closed"
 		<motion.div animate={open ? "open" : "closed"} className={cn(styles.sidebar, className)}>
 			<motion.div
-				className={cn(
-					styles.wrapper,
-					"transition-colors duration-1000 data-[state=open]:bg-foreground",
-					"data-[state=closed]:bg-accent/60"
-				)}
+				className={cn(styles.wrapper)}
 				data-state={open ? "open" : "closed"}
 				initial={variants.initial as {}}
 				variants={variants}

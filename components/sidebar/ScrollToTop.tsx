@@ -12,11 +12,11 @@ interface Props {
 
 const ScrollToTop: React.FC<Props> = ({ className, onClick, show }) => {
 	return (
-		<div className={cn("drop-shadow-xl fixed right-0 bottom-1 w-full", className)}>
+		<div className={cn("drop-shadow-xl fixed right-9 bottom-1 w-full", className)}>
 			<div className="w-full max-w-screen-1xl mx-auto flex items-center justify-end">
 				<div
 					className={cn(
-						"group drop-shadow-lg p-3 -mr-5 cursor-pointer transition-transform duration-300",
+						"group drop-shadow-lg p-6 mr-0 cursor-pointer transition-transform duration-300",
 						show ? "" : "translate-y-24"
 					)}
 				>

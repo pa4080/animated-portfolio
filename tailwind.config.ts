@@ -39,8 +39,8 @@ const tailwindConfig: import("tailwindcss").Config = {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
 				ring: "hsl(var(--ring))",
-				"ring-opacity": "var(--ring-opacity)",
 				background: "hsl(var(--background))",
+				"background-to": "hsl(var(--background-to))",
 				foreground: "hsl(var(--foreground))",
 				primary: {
 					DEFAULT: "hsl(var(--primary))",
@@ -91,11 +91,21 @@ const tailwindConfig: import("tailwindcss").Config = {
 					"20%": { opacity: "0%" },
 					"100%": { opacity: "100%" },
 				},
+				fadeIn25: {
+					"0%": { opacity: "0%" },
+					"100%": { opacity: "25%" },
+				},
+				fadeIn03: {
+					"0%": { opacity: "0%" },
+					"100%": { opacity: "3%" },
+				},
 			},
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
 				fadeIn: "fadeIn 2.5s ease-in-out forwards",
+				fadeIn25: "fadeIn25 2.5s ease-in-out forwards",
+				fadeIn03: "fadeIn03 2.5s ease-in-out forwards",
 			},
 		},
 	},

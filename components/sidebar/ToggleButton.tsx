@@ -14,7 +14,10 @@ const ToggleButton: React.FC<Props> = ({ className, onClick }) => {
 	const { accent, background } = cssVars;
 
 	return (
-		<button className={cn("pt-[2px] drop-shadow-lg", className)} onClick={onClick}>
+		<button
+			className={cn("opacity-0 animate-fadeIn pt-[2px] drop-shadow-lg", className)}
+			onClick={onClick}
+		>
 			<svg height="23" viewBox="0 0 23 23" width="23">
 				<motion.path
 					strokeLinecap="round"

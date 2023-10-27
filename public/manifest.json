@@ -1,8 +1,9 @@
 {
 	"short_name": "Animated Portfolio",
-	"name": "Animated Portfolio Website with React & Framer Motion",
-	"description": "An exercise project where is created a dummy animated portfolio website with React, Framer Motion and Tailwind CSS",
+	"name": "Animated Portfolio Website with React",
+	"description": "Animated Portfolio Website with React, Framer Motion and Tailwind CSS powered by Next.js",
 	"author": "Spas Z. Spasov",
+	"about": "Fullstack developer, Linux geek and open source enthusiast",
 	"homepage_url": "https://animated-portfolio.metalevel.tech/",
 	"keywords": "portfolio, portfolio website, framer motion, nextjs, next, react, typescript, javascript, spa",
 	"icons": [
