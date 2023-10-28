@@ -47,10 +47,10 @@ const sliderVariants: Variants = {
 		x: "75%",
 	},
 	animate: {
-		x: "-1385%",
+		x: "-1735%",
 		transition: {
 			repeat: Infinity,
-			duration: 60,
+			duration: 65,
 			repeatDelay: 10,
 		},
 	},
@@ -98,20 +98,20 @@ const Hero: React.FC<Props> = ({ className }) => {
 						/>
 					</motion.div>
 				</motion.div>
-			</motion.div>
-			<motion.div
-				className={styles.imageContainer}
-				initial={{ opacity: 0, x: 350, y: 250, scale: 0.3 }}
-				transition={{ duration: 1 }}
-				whileInView={{
-					opacity: 1,
-					x: 0,
-					y: 0,
-					scale: 1,
-					transition: { delay: 0.5, duration: 0.75 },
-				}}
-			>
-				<Image alt={messages.Hero.modelImageAlt} src={model_image} />
+				<motion.div
+					animate={{
+						opacity: 1,
+						x: 0,
+						y: 0,
+						scale: 1,
+						transition: { delay: 0.3, duration: 0.7 },
+					}}
+					className={styles.modelImageContainer}
+					initial={{ opacity: 0, x: "350%", y: "-150%", scale: 0.3 }}
+					transition={{ duration: 1 }}
+				>
+					<Image priority alt={messages.Hero.modelImageAlt} src={model_image} />
+				</motion.div>
 			</motion.div>
 		</div>
 	);
