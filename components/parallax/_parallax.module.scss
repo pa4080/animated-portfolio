@@ -88,7 +88,7 @@
 	// Light mode Parallax
 	.city1 {
 		.imageAsBackground {
-			@apply absolute bottom-0 left-0 w-[100%] h-full;
+			@apply absolute bottom-0 left-0 w-[300%] h-full;
 			background: url("/assets/parallax/light/layer_03.png");
 			background-image: url("/assets/parallax/light/layer_03.webp");
 			background-size: auto;
@@ -100,7 +100,7 @@
 
 	.city2 {
 		.imageAsBackground {
-			@apply absolute bottom-0 left-0 w-[100%] h-full;
+			@apply absolute bottom-0 left-0 w-[300%] h-full;
 			background: url("/assets/parallax/light/layer_04.png");
 			background-image: url("/assets/parallax/light/layer_04.webp");
 			background-size: auto;
@@ -112,7 +112,7 @@
 
 	.city3 {
 		.imageAsBackground {
-			@apply absolute bottom-0 left-0 w-[100%] h-full;
+			@apply absolute bottom-0 left-0 w-[300%] h-full;
 			background: url("/assets/parallax/light/layer_05.png");
 			background-image: url("/assets/parallax/light/layer_05.webp");
 			background-size: auto;
@@ -124,7 +124,7 @@
 
 	.city4 {
 		.imageAsBackground {
-			@apply absolute bottom-0 left-0 w-[100%] h-full;
+			@apply absolute bottom-0 left-0 w-[300%] h-full;
 			background: url("/assets/parallax/light/layer_06.png");
 			background-image: url("/assets/parallax/light/layer_06.webp");
 			background-size: auto;
