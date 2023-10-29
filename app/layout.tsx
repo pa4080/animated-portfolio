@@ -50,7 +50,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
 					`${inter.variable} ${roboto_slab.variable} ${unicephalon.variable} `
 				}
 			>
-				<AppContextProvider>{children}</AppContextProvider>
+				<AppContextProvider theme={switchTheme()}>{children}</AppContextProvider>
 				{/* <Analytics /> */}
 			</body>
 		</html>

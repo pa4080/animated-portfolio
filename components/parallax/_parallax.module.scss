@@ -1,0 +1,179 @@
+@import "@/app/globals.variables.module.scss";
+
+.parallax {
+	@apply relative flex items-center justify-center -mx-12;
+	height: vh(100);
+
+	.textBox {
+		@apply flex flex-col gap-3 z-10;
+
+		h1 {
+			@apply text-foreground text-7xl font-extrabold z-10;
+		}
+	}
+
+	.textBoxLight {
+		filter: drop-shadow(0 0 24px rgba(233, 148, 53, 0.75));
+	}
+
+	.textBoxDark {
+		filter: drop-shadow(0 0 24px rgba(161, 124, 247, 0.55));
+	}
+
+	.city4,
+	.city3,
+	.city2,
+	.city1,
+	.skyA,
+	.skyB,
+	.trees,
+	.ground,
+	.orangeBackground,
+	.mountains,
+	.planets,
+	.sun,
+	.stars {
+		@apply absolute top-0 left-0 bottom-0 w-full h-full;
+
+		.image {
+			@apply object-cover object-bottom w-full h-full;
+		}
+	}
+
+	// Dark mode Parallax
+	.stars {
+		.imageAsBackground {
+			@apply absolute top-0 left-[-50%] w-[300%] h-full;
+			background: url("/assets/parallax/dark/stars.png");
+			background-image: url("/assets/parallax/dark/stars.webp");
+			background-size: auto;
+			background-position: center;
+			background-repeat: repeat-x;
+		}
+	}
+
+	.mountains {
+		.imageAsBackground {
+			@apply absolute top-0 left-0 w-[100%] h-full;
+			background: url("/assets/parallax/dark/mountains.png");
+			background-image: url("/assets/parallax/dark/mountains.webp");
+			background-size: auto;
+			background-position: center;
+			background-repeat: repeat-x;
+		}
+	}
+
+	.planets {
+		.imageAsBackground {
+			@apply absolute top-0 left-0 w-[100%] h-full;
+			background: url("/assets/parallax/dark/planets.png");
+			background-image: url("/assets/parallax/dark/planets.webp");
+			background-size: auto;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
+
+	.sun {
+		.imageAsBackground {
+			@apply absolute top-0 left-0 w-[100%] h-full;
+			background: url("/assets/parallax/dark/sun.png");
+			background-image: url("/assets/parallax/dark/sun.webp");
+			background-size: auto;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
+
+	// Light mode Parallax
+	.city1 {
+		.imageAsBackground {
+			@apply absolute bottom-0 left-0 w-[100%] h-full;
+			background: url("/assets/parallax/light/layer_03.png");
+			background-image: url("/assets/parallax/light/layer_03.webp");
+			background-size: auto;
+			background-position-x: center;
+			background-position-y: 55%;
+			background-repeat: repeat-x;
+		}
+	}
+
+	.city2 {
+		.imageAsBackground {
+			@apply absolute bottom-0 left-0 w-[100%] h-full;
+			background: url("/assets/parallax/light/layer_04.png");
+			background-image: url("/assets/parallax/light/layer_04.webp");
+			background-size: auto;
+			background-position-x: center;
+			background-position-y: 55%;
+			background-repeat: repeat-x;
+		}
+	}
+
+	.city3 {
+		.imageAsBackground {
+			@apply absolute bottom-0 left-0 w-[100%] h-full;
+			background: url("/assets/parallax/light/layer_05.png");
+			background-image: url("/assets/parallax/light/layer_05.webp");
+			background-size: auto;
+			background-position-x: center;
+			background-position-y: 55%;
+			background-repeat: repeat-x;
+		}
+	}
+
+	.city4 {
+		.imageAsBackground {
+			@apply absolute bottom-0 left-0 w-[100%] h-full;
+			background: url("/assets/parallax/light/layer_06.png");
+			background-image: url("/assets/parallax/light/layer_06.webp");
+			background-size: auto;
+			background-position-x: center;
+			background-position-y: 55%;
+			background-repeat: repeat-x;
+		}
+	}
+
+	.ground {
+		.imageAsBackground {
+			@apply absolute bottom-0 -left-[100%] w-[300%] h-full;
+			background: url("/assets/parallax/light/layer_01.png");
+			background-image: url("/assets/parallax/light/layer_01.webp");
+			background-size: auto;
+			background-position-x: center;
+			background-position-y: 55%;
+			background-repeat: repeat-x;
+		}
+	}
+
+	.trees {
+		.imageAsBackground {
+			@apply absolute bottom-0 -left-[100%] w-[300%] h-full;
+			background: url("/assets/parallax/light/layer_02.webp");
+			background-image: url("/assets/parallax/light/layer_02.png");
+			background-size: auto;
+			background-position-x: center;
+			background-position-y: 55%;
+			background-repeat: repeat-x;
+		}
+	}
+
+	.skyA,
+	.skyB {
+		.imageAsBackground {
+			@apply absolute bottom-0 left-0 w-[100%] h-full;
+			background: url("/assets/parallax/light/layer_07.webp");
+			background-image: url("/assets/parallax/light/layer_07.png");
+			background-size: cover;
+			background-position-x: 0;
+			background-position-y: -2rem;
+			background-repeat: repeat-x;
+		}
+	}
+
+	.skyB {
+		.imageAsBackground {
+			@apply -scale-x-100;
+		}
+	}
+}

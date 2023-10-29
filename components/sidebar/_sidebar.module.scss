@@ -2,7 +2,7 @@
 	@apply flex flex-col items-center justify-start z-10 text-background relative;
 
 	.wrapper {
-		@apply fixed top-0 left-0 bottom-0 w-80 h-full shadow-[-2px_0px_32px_-2px] shadow-foreground/60 transition-colors duration-1000 data-[state=open]:bg-foreground data-[state=closed]:bg-accent/60;
+		@apply fixed top-0 left-0 bottom-0 w-80 h-full shadow-[2px_0px_8px_-2px] shadow-background transition-colors duration-1000 data-[state=open]:bg-foreground data-[state=closed]:bg-accent/60;
 
 		.links {
 			@apply absolute w-full h-full flex flex-col items-center justify-center;
