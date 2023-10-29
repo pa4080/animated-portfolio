@@ -6,7 +6,7 @@
 	// min-height: 550px;
 
 	.slidingTextContainer {
-		@apply absolute left-0 -bottom-24 text-[60vh] font-[900] whitespace-nowrap text-gray-950 max-w-[1280px] leading-[1em];
+		@apply absolute left-0 -bottom-24 text-[60vh] font-[900] whitespace-nowrap text-gray-950 w-[1280px] leading-[1em];
 	}
 
 	.wrapper {

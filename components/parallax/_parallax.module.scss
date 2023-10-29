@@ -1,0 +1,32 @@
+@import "@/app/globals.variables.module.scss";
+
+.parallax {
+	@apply relative flex items-center justify-center -mx-12;
+	height: vh(100);
+
+	.textBox {
+		@apply flex flex-col gap-3 z-10;
+
+		h1 {
+			@apply text-foreground text-7xl font-extrabold z-10;
+		}
+	}
+
+	.mountains,
+	.planets,
+	.stars {
+		@apply absolute top-0 left-0 w-full h-full;
+
+		.image {
+			@apply object-cover object-bottom w-full h-full;
+		}
+	}
+
+	.imageAsBackground {
+		@apply absolute top-0 left-[-50%] w-[300%] h-full;
+		background-image: url("/assets/parallax/dark/stars.webp");
+		background-size: cover;
+		background-position: center;
+		background-repeat: repeat-x;
+	}
+}
