@@ -72,16 +72,16 @@ const ParallaxLight: React.FC<ParallaxProps> = ({ className, type, children, tit
 							<div aria-label="Parallax background image" className={styles.imageAsBackground} />
 						</motion.div>
 
-						<motion.div className={styles.city4} style={{ y: yCity4, x: xGroundA }}>
+						<motion.div className={styles.city4} style={{ y: yCity4, x: xGroundB }}>
 							<div aria-label="Parallax background image" className={styles.imageAsBackground} />
 						</motion.div>
-						<motion.div className={styles.city3} style={{ y: yCity3, x: xGroundA }}>
+						<motion.div className={styles.city3} style={{ y: yCity3, x: xGroundB }}>
 							<div aria-label="Parallax background image" className={styles.imageAsBackground} />
 						</motion.div>
-						<motion.div className={styles.city2} style={{ y: yCity2, x: xGroundA }}>
+						<motion.div className={styles.city2} style={{ y: yCity2, x: xGroundB }}>
 							<div aria-label="Parallax background image" className={styles.imageAsBackground} />
 						</motion.div>
-						<motion.div className={styles.city1} style={{ y: yCity1, x: xGroundA }}>
+						<motion.div className={styles.city1} style={{ y: yCity1, x: xGroundB }}>
 							<div aria-label="Parallax background image" className={styles.imageAsBackground} />
 						</motion.div>
 
