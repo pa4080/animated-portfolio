@@ -43,5 +43,15 @@
 		"presents": "Presents",
 		"latestProjects": "See the latest projects",
 		"contactMe": "Contact Me"
+	},
+	"Services": {
+		"title": "What We do?",
+		"titleImageAlt": "A picture of a dev team",
+		"slogan": "I focus on helping your brand grow <br /> and move forward",
+		"title_ln1": "<b>Unique</b> Ideas",
+		"title_ln2": "<b>For Your</b> Business"
+	},
+	"Portfolio": {
+		"title": "What We Did"
 	}
 }

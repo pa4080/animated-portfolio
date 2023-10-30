@@ -40,6 +40,7 @@
 		"components/home": "base",
 		"components": "home",
 		"components/ui": "core",
+		"components/services": "",
 		"components/fragments": "core",
 		"geo-data/languages": "",
 		"[[...query]]": "api",
