@@ -8,20 +8,26 @@ import { inter, roboto_slab, unicephalon, dm_sans } from "@/app/fonts";
 import manifest from "@/public/manifest.json";
 import { AppContextProvider } from "@/contexts/AppContext";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
 	title: manifest.name,
 	description: manifest.description,
 	manifest: "/manifest.json",
-	viewport: "width=device-width, initial-scale=1",
+	// viewport: "width=device-width, initial-scale=1",
 	robots: "index,follow",
 	keywords: manifest.keywords,
-	themeColor: manifest.theme_color,
 	publisher: manifest.author,
 	creator: manifest.author,
-	colorScheme: "light",
 	icons: "/favicon.svg",
+};
+
+export const viewport: Viewport = {
+	themeColor: [
+		{ color: manifest.theme_color, media: "(prefers-color-scheme: light)" },
+		{ color: manifest.theme_color_dark, media: "(prefers-color-scheme: dark)" },
+	],
+	colorScheme: "light dark",
 };
 
 interface Props {

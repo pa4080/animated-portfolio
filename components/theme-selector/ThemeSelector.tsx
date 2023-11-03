@@ -1,9 +1,8 @@
+import React, { CSSProperties } from "react";
 import dynamic from "next/dynamic";
 import { cookies } from "next/headers";
 
 import { SunMoon } from "lucide-react";
-
-import React, { CSSProperties } from "react";
 
 import { ThemeMode, ThemeType } from "./ThemeSelectorCore";
 

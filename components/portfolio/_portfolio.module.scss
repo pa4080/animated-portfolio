@@ -1,0 +1,82 @@
+@import "@/app/globals.variables.module.scss";
+
+.portfolio {
+	@apply relative bg-background text-foreground;
+
+	.progress {
+		@apply sticky top-0 left-0 right-0 w-full flex flex-col items-center justify-center backdrop-blur-sm gap-3 z-10 select-none
+		pb-6 pt-7 lg:pb-14 bg-background/40 sm:bg-background/10;
+
+		.progressTitle {
+			@apply text-accent font-[900] lowercase tracking-widest
+			text-2xl mt-1 ml-6
+			3xs:text-4xl 3xs:mt-0 3xs:ml-0;
+			font-variant: small-caps;
+		}
+
+		.progressBar {
+			@apply relative w-full bg-accent h-[1px] opacity-40 max-w-[86%];
+		}
+	}
+
+	.projectSection {
+		@apply flex w-full items-center
+		justify-end
+		lg:justify-center;
+
+		&:last-child {
+			@apply mb-28;
+
+			@screen sm {
+				@apply mb-auto;
+			}
+		}
+
+		.projectSectionWrapper {
+			@apply px-0 h-fit z-0 w-full
+			grid max-w-lg mt-28 mb-auto mx-auto gap-3
+			lg:grid-cols-2 lg:max-w-6xl lg:my-auto lg:py-5 lg:gap-5;
+
+			.image {
+				flex: 1;
+				@apply drop-shadow-2xl relative z-0 flex justify-center items-center;
+			}
+
+			.textContainer {
+				flex: 1;
+				@apply flex flex-col gap-6 lg:gap-4 h-full justify-between p-3;
+
+				h1 {
+					@apply text-accent text-3xl font-extrabold;
+				}
+
+				.description {
+					@apply text-foreground flex-grow hyphens-auto;
+				}
+
+				.buttons {
+					@apply self-center w-full flex justify-between
+					flex-col gap-6
+					2xs:flex-row 2xs:gap-4;
+
+					div {
+						@apply block w-full;
+
+						a {
+							@apply border-2 border-foreground font-semibold text-background bg-foreground px-2 2xs:px-3 py-1 rounded-md hover:text-foreground hover:bg-background transition-colors duration-500 hover:duration-150 hover:drop-shadow-lg opacity-95 hover:opacity-100 cursor-pointer flex items-center w-full
+							gap-1 xs:gap-3;
+
+							.btnText {
+								@apply block w-full flex-grow;
+							}
+
+							.icon {
+								@apply text-2xl -mr-1.5 w-fit;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

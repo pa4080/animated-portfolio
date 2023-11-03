@@ -4,6 +4,8 @@ import React from "react";
 import { Variants, motion } from "framer-motion";
 import Image from "next/image";
 
+import Link from "next/link";
+
 import model_image from "@/public/images/model-squat.webp";
 import scroll_image from "@/public/images/scroll.png";
 import messages from "@/messages/en.json";
@@ -65,7 +67,9 @@ const Hero: React.FC<Props> = ({ className }) => {
 				initial="initial"
 				variants={sliderVariants}
 			>
-				<span className="animate-fadeIn03 dark:animate-fadeIn25">{manifest.description}</span>
+				<span className="animate-fadeInSiderTextLight dark:animate-fadeInSiderTextDark">
+					{manifest.description}
+				</span>
 			</motion.div>
 
 			<motion.div
@@ -84,19 +88,27 @@ const Hero: React.FC<Props> = ({ className }) => {
 					</motion.h1>
 					<motion.div className={styles.buttons} variants={textVariants}>
 						<motion.div variants={textVariants}>
-							<button>{messages.Hero.latestProjects}</button>
+							<Link href="#Portfolio_projects">
+								<button>{messages.Hero.latestProjects}</button>
+							</Link>
 						</motion.div>
 						<motion.div variants={textVariants}>
-							<button>{messages.Hero.contactMe}</button>
+							<Link href="#Contact">
+								<button>{messages.Hero.contactMe}</button>
+							</Link>
 						</motion.div>
 					</motion.div>
-					<motion.div animate="scrollButton" variants={textVariants}>
-						<Image
-							alt={messages.Hero.scrollImageAlt}
-							className={styles.scrollImage + " invert dark:invert-0"}
-							src={scroll_image}
-						/>
-					</motion.div>
+					<Link className="block mt-12 h-14 w-12" href="#Services">
+						<div className="-translate-y-12">
+							<motion.div animate="scrollButton" variants={textVariants}>
+								<Image
+									alt={messages.Hero.scrollImageAlt}
+									className={styles.scrollImage + " invert dark:invert-0"}
+									src={scroll_image}
+								/>
+							</motion.div>
+						</div>
+					</Link>
 				</motion.div>
 				<motion.div
 					animate={{

@@ -1,6 +1,7 @@
 "use client";
 import React, { ReactNode } from "react";
 
+import messages from "@/messages/en.json";
 import { useAppContext } from "@/contexts/AppContext";
 
 import ParallaxDark from "./ParallaxDark";
@@ -17,7 +18,11 @@ export interface ParallaxProps {
 
 const Parallax: React.FC<ParallaxProps> = ({ className, type, children, title }) => {
 	const { theme } = useAppContext();
-	const composeTitle = title ? title : type === "services" ? "What We do?" : "What We Did";
+	const composeTitle = title
+		? title
+		: type === "services"
+		? messages.Services.title
+		: messages.Portfolio.title;
 
 	return theme === "dark" ? (
 		<ParallaxDark className={className} title={composeTitle} type={type}>

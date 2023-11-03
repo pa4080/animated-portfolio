@@ -19,15 +19,22 @@ const tailwindConfig: import("tailwindcss").Config = {
 		},
 		extend: {
 			screens: {
-				sa: "720px", // small average
-				xa: "580px", // extra small average
-				xs: "520px", // extra small
-				"2xs": "480px",
-				"3xs": "420px",
-				"4xs": "380px",
-				"5xs": "360px",
 				"6xs": "320px",
+				"5xs": "360px",
+				"4xs": "380px",
+				"3xs": "420px",
+				"2xs": "480px",
+				xs: "520px", // extra small
+				xa: "580px", // extra small average
+				sm: "640px",
+				sa: "720px", // small average
+				md: "768px",
+				ma: "820px",
+				ml: "920px",
+				lg: "1024px",
+				xl: "1280px",
 				"1xl": "1366px",
+				"2xl": "1536px",
 			},
 			fontFamily: {
 				inter: ["var(--font-inter)", "sans-serif"],
@@ -91,21 +98,21 @@ const tailwindConfig: import("tailwindcss").Config = {
 					"20%": { opacity: "0%" },
 					"100%": { opacity: "100%" },
 				},
-				fadeIn25: {
+				fadeInSiderTextDark: {
 					"0%": { opacity: "0%" },
-					"100%": { opacity: "25%" },
+					"100%": { opacity: "35%" },
 				},
-				fadeIn03: {
+				fadeInSiderTextLight: {
 					"0%": { opacity: "0%" },
-					"100%": { opacity: "3%" },
+					"100%": { opacity: "5%" },
 				},
 			},
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
 				fadeIn: "fadeIn 2.5s ease-in-out forwards",
-				fadeIn25: "fadeIn25 2.5s ease-in-out forwards",
-				fadeIn03: "fadeIn03 2.5s ease-in-out forwards",
+				fadeInSiderTextDark: "fadeInSiderTextDark 2.5s ease-in-out forwards",
+				fadeInSiderTextLight: "fadeInSiderTextLight 2.5s ease-in-out forwards",
 			},
 		},
 	},

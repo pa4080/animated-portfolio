@@ -3,13 +3,18 @@
 const nextConfig = {
 	reactStrictMode: true,
 	images: {
-		// https://nextjs.org/docs/messages/next-image-unconfigured-host
 		remotePatterns: [
 			{
 				protocol: "https",
-				hostname: "lh3.googleusercontent.com",
+				hostname: "githubusercontent.com",
 				port: "",
-				pathname: "/**",
+				pathname: "*/**",
+			},
+			{
+				protocol: "https",
+				hostname: "raw.githubusercontent.com",
+				port: "",
+				pathname: "*/**",
 			},
 			{
 				protocol: "https",
@@ -19,7 +24,7 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
-				hostname: "media.rawg.io",
+				hostname: "media.licdn.com",
 				port: "",
 				pathname: "/**",
 			},
