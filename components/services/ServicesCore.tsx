@@ -4,12 +4,14 @@ import React, { useRef } from "react";
 import { Variants, motion, useInView } from "framer-motion";
 import Image from "next/image";
 
+import Link from "next/link";
+
 import messages from "@/messages/en.json";
 import people_image from "@/public/images/people_x300.webp";
 
 import { cn } from "@/lib/cn-utils";
 
-import { fourRandomItems } from "@/lib/four-random-items";
+import { arrayRandomItems } from "@/lib/array-random-items";
 
 import styles from "./_services.module.scss";
 
@@ -32,13 +34,15 @@ const variants: Variants = {
 
 interface Props {
 	className?: string;
+	margin?: string;
+	randomCount?: number;
 }
 
-const ServicesCore: React.FC<Props> = ({ className }) => {
+const ServicesCore: React.FC<Props> = ({ className, margin = "-100px", randomCount = 4 }) => {
 	const containerRef = useRef(null);
-	const isInView = useInView(containerRef, { margin: "-100px" });
+	const isInView = useInView(containerRef, { margin });
 	const services = messages.Services.items;
-	const pick4Services = fourRandomItems({ items: services });
+	const getRandomServices = arrayRandomItems({ items: services, count: randomCount });
 
 	return (
 		<motion.div
@@ -67,15 +71,17 @@ const ServicesCore: React.FC<Props> = ({ className }) => {
 				</div>
 			</motion.div>
 			<motion.div className={styles.listContainer} variants={variants}>
-				{pick4Services.map((service) => (
+				{getRandomServices.map((service) => (
 					<div key={service.id} className={styles.listItem}>
 						<h2 className={styles.listItemTitle}>{service.title}</h2>
 						<div className={styles.listItemContent}>
 							<p>{service.description}</p>
 						</div>
-						<div className={styles.listItemButton}>
-							<button>{messages.Buttons.go}</button>
-						</div>
+						<Link href="#Contact">
+							<div className={styles.listItemButton}>
+								<button>{messages.Buttons.go}</button>
+							</div>
+						</Link>
 					</div>
 				))}
 			</motion.div>

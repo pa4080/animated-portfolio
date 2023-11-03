@@ -6,14 +6,17 @@
 	// min-height: 550px;
 
 	.slidingTextContainer {
-		@apply absolute left-0 -bottom-24 text-[60vh] font-[900] whitespace-nowrap text-gray-950 w-[1280px] leading-[1em];
+		@apply absolute left-0 -bottom-6 sm:-bottom-24 text-[20vh] sm:text-[60vh] font-[900] whitespace-nowrap text-gray-950
+		w-[402px] sm:w-[1280px] leading-[1em];
 	}
 
 	.wrapper {
 		@apply max-w-screen-1xl m-auto h-full z-10 relative select-none;
 
 		.textContainer {
-			@apply h-full flex flex-col justify-center gap-10 max-w-[60%] z-10;
+			@apply h-full flex flex-col max-w-[400px] ml:max-w-[63%] lg:max-w-[60%] z-10 relative
+			gap-6 sm:gap-10
+			justify-start sa:justify-center;
 
 			.author {
 				@apply text-accent uppercase text-3xl font-extrabold tracking-[5px];
@@ -25,19 +28,23 @@
 			}
 
 			.title {
-				@apply text-foreground text-6xl font-extrabold leading-[1.2em];
+				@apply text-foreground font-extrabold
+				max-w-[8.8em] lg:max-w-full
+				text-5xl leading-[1.1em]
+				sa:text-4xl sa:leading-[1.2em]
+				ma:text-5xl ma:leading-[1.2em]
+				ml:text-6xl ml:leading-[1.2em];
 			}
 
 			.buttons {
-				div {
-					display: inline-block;
-					button {
-						@apply uppercase border-2 border-foreground font-bold text-lg tracking-wider text-background bg-foreground px-6 py-2 rounded-xl hover:text-foreground hover:bg-background transition-colors duration-500 hover:duration-150 hover:drop-shadow-lg opacity-95 hover:opacity-100 cursor-pointer;
-					}
-				}
+				@apply flex flex-col lg:flex-row gap-3 sa:gap-6;
 
-				div + div {
-					@apply ml-6;
+				div {
+					button {
+						@apply uppercase border-2 border-foreground font-bold tracking-wider text-background bg-foreground hover:text-foreground hover:bg-background transition-colors duration-500 hover:duration-150 hover:drop-shadow-lg opacity-95 hover:opacity-100 cursor-pointer
+						px-3 py-1 text-base rounded-lg
+						sa:px-6 sa:py-2 sa:text-lg sa:rounded-xl;
+					}
 				}
 			}
 
@@ -47,10 +54,10 @@
 		}
 
 		.modelImageContainer {
-			@apply absolute right-0 bottom-10 drop-shadow-2xl z-0 brightness-125 saturate-[90%];
+			@apply absolute -right-6 bottom-12 drop-shadow-2xl z-0 brightness-125 saturate-[90%];
 
 			img {
-				@apply drop-shadow-2xl z-0 w-auto;
+				@apply drop-shadow-2xl z-0 w-auto hidden sa:block;
 				max-height: 95vh;
 				// min-height: 600px;
 			}

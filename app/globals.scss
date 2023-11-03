@@ -171,18 +171,30 @@ a:hover {
 
 /* sections scroll */
 html,
-body {
-	height: vh(100);
-}
-
-html {
-	scroll-snap-type: y mandatory;
-	scroll-behavior: smooth;
-}
-
+body,
+main,
 section {
-	height: vh(100);
-	scroll-snap-align: center;
+	min-height: 100vh;
+}
+
+@screen sm {
+	html,
+	body,
+	main,
+	#Portfolio,
+	#Services {
+		height: vh(100);
+	}
+
+	html {
+		scroll-snap-type: y mandatory;
+		scroll-behavior: smooth;
+	}
+
+	section {
+		height: vh(100);
+		scroll-snap-align: center;
+	}
 }
 
 /* Logo */
@@ -230,14 +242,15 @@ section {
 }
 
 /* sections */
-body > main > section {
-	@apply px-12 overflow-hidden;
+main > section,
+main > div > section {
+	@apply overflow-hidden px-4 sm:px-12;
 
-	&:nth-child(odd) {
+	&:nth-of-type(odd) {
 		@apply bg-gradient-to-b from-background to-background-to;
 	}
 
-	&:nth-child(even) {
+	&:nth-of-type(even) {
 		@apply bg-gradient-to-b from-background-to to-background;
 	}
 }

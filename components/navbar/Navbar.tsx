@@ -16,7 +16,7 @@ interface Props {
 
 const Navbar: React.FC<Props> = ({ className }) => {
 	return (
-		<div className={cn(styles.Navbar, className)}>
+		<div className={cn(styles.navbar, className)}>
 			<div className={styles.wrapper}>
 				<Nav_Logo />
 
