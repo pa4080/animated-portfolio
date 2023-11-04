@@ -55,10 +55,10 @@
 		flex: 2;
 		flex-grow: 1;
 
-		@apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-screen-1xl pt-4 pb-8 px-4;
+		@apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-screen-1xl pt-4 pb-8 px-4;
 
 		.listItem {
-			@apply flex flex-col items-start justify-start gap-3 bg-background/30 py-3 px-4 sm:py-6 sm:px-6 h-fit rounded-2xl backdrop-blur-sm shadow-[0px_0px_24px_-2px] shadow-accent/10 hover:shadow-accent/20 drop-shadow-xl hover:drop-shadow-none transition-all duration-150 hover:duration-300 relative overflow-hidden;
+			@apply flex flex-col items-start justify-start gap-3 bg-background/30 py-3 px-4 lg:py-6 lg:px-6 h-fit rounded-2xl backdrop-blur-sm shadow-[0px_0px_24px_-2px] shadow-accent/10 hover:shadow-accent/20 drop-shadow-xl hover:drop-shadow-none transition-all duration-150 hover:duration-300 relative overflow-hidden;
 
 			.listItemTitle {
 				flex: 1;

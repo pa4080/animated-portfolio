@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { Variants, motion } from "framer-motion";
 
@@ -42,21 +42,44 @@ const variants: Variants = {
 
 const Sidebar: React.FC<Props> = ({ className }) => {
 	const [open, setOpen] = useState(false);
-
 	const { show, scrollTo } = useActualVh();
+	const ref = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		/**
+		 * Close the menu when click outside
+		 * https://stackoverflow.com/a/42234988/6543935
+		 */
+		function handleClickOutside(event: MouseEvent) {
+			if (!ref.current) {
+				return;
+			}
+
+			if (!ref.current.contains(event.target as Node)) {
+				setOpen(false);
+			}
+		}
+
+		document.addEventListener("mousedown", handleClickOutside);
+
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, [ref]);
 
 	return (
-		// This animation will be applied to all children,
-		// so when it is "open" the children will choose the variant "open"
-		// and when it is "closed" the children will choose the variant "closed"
-		<motion.div animate={open ? "open" : "closed"} className={cn(styles.sidebar, className)}>
+		<motion.div
+			ref={ref}
+			animate={open ? "open" : "closed"}
+			className={cn(styles.sidebar, className)}
+		>
 			<motion.div
 				className={cn(styles.wrapper)}
 				data-state={open ? "open" : "closed"}
 				initial={variants.initial as {}}
 				variants={variants}
 			>
-				<Links className={styles.links} />
+				<Links className={styles.links} onClick={() => setOpen(false)} />
 			</motion.div>
 			<ToggleButton className={styles.toggleButton} onClick={() => setOpen((prev) => !prev)} />
 			<ScrollToTop show={show} onClick={scrollTo} />
