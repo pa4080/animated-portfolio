@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { Variants, motion } from "framer-motion";
+import React, { useRef } from "react";
+import { Variants, motion, useInView } from "framer-motion";
 
 import { cn } from "@/lib/cn-utils";
 
@@ -49,12 +49,17 @@ interface Props {
 }
 
 const ContactText: React.FC<Props> = ({ className, textItems, title }) => {
+	const ref = useRef(null);
+	const isInView = useInView(ref);
+
 	return (
 		<motion.div
+			ref={ref}
+			animate={isInView && "animate"}
 			className={cn(styles.textContainer, className)}
 			initial="initial"
 			variants={variantsX}
-			whileInView="animate"
+			// whileInView="animate"
 		>
 			<motion.h1 className={styles.title} variants={variantsY}>
 				{title}
