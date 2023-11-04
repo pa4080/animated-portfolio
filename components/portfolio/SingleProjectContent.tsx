@@ -24,7 +24,7 @@ const SingleProjectContent: React.FC<Props> = ({ name, description, link, projec
 				<div>
 					<a href={project} target="_blank">
 						<p className={styles.btnText}>{messages.Portfolio.viewRepo}</p>
-						<div className={styles.icon}>
+						<div className={styles.btnIcon}>
 							<FaGithubAlt />
 						</div>
 					</a>
@@ -36,7 +36,7 @@ const SingleProjectContent: React.FC<Props> = ({ name, description, link, projec
 				<div>
 					<a href={link} target="_blank">
 						<p className={styles.btnText}>{messages.Portfolio.viewProject}</p>
-						<div className={styles.icon}>
+						<div className={styles.btnIcon}>
 							<FaExternalLinkSquareAlt />
 						</div>
 					</a>

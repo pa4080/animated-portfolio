@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Parallax from "@/components/parallax/Parallax";
 import Services from "@/components/services/Services";
 import Portfolio from "@/components/portfolio/Portfolio";
+import Contact from "@/components/contact/Contact";
 
 /**
  * Refs. about the grid layout
@@ -31,7 +32,9 @@ const Home: React.FC = () => {
 				<Parallax type="portfolio" />
 			</section>
 			<Portfolio />
-			<section id="Contact">Contact</section>
+			<section id="Contact">
+				<Contact />
+			</section>
 			<section id="About">About</section>
 		</main>
 	);

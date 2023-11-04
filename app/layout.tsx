@@ -2,6 +2,8 @@ import React from "react";
 // import { Analytics } from "@vercel/analytics/react";
 import { cookies } from "next/headers";
 
+import { Toaster } from "@/components/ui/toaster";
+
 import "./globals.scss";
 
 import { inter, roboto_slab, unicephalon, dm_sans } from "@/app/fonts";
@@ -58,6 +60,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
 			>
 				<AppContextProvider theme={switchTheme()}>{children}</AppContextProvider>
 				{/* <Analytics /> */}
+				<Toaster />
 			</body>
 		</html>
 	);
