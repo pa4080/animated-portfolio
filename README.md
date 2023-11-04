@@ -32,6 +32,7 @@ Open [http://localhost:3001](http://localhost:3001) with your browser to see the
 
 - TailwindCSS: [Using with Preprocessors](vscodethemes.com/e/juliettepretot.lucy-vscode/lucy?language=javascript)
 - [Framer Motion](https://www.framer.com/)
+- [SVG Repo](https://www.svgrepo.com/)
 - *Email*
   - [Resend](https://resend.com/) *currently in use*
   - [Resend YouTube Tutorial by Brett Westwood](https://youtu.be/T2xaiw7VK4A?si=KiKDXDtTiagPNbzv)
