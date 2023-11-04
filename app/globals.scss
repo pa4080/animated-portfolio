@@ -181,8 +181,7 @@ section {
 	html,
 	body,
 	main,
-	#Portfolio,
-	#Services {
+	section {
 		height: vh(100);
 	}
 
@@ -192,7 +191,6 @@ section {
 	}
 
 	section {
-		height: vh(100);
 		scroll-snap-align: center;
 	}
 }

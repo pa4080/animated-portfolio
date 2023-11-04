@@ -8,6 +8,7 @@ import styles from "./_contact.module.scss";
 import ContactForm, { FormDataType } from "./ContactForm";
 import EmailTemplate_Client from "./email-templates/EmailTemplate_Client";
 import EmailTemplate_Admin from "./email-templates/EmailTemplate_Admin";
+import ContactText, { TextItem } from "./ContactText";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -62,29 +63,20 @@ const Contact: React.FC<Props> = ({ className }) => {
 		}
 	};
 
+	const textItems: TextItem[] = messages.Contact.items
+		.filter((item) => item.active)
+		.map((item) => ({
+			// No mather the process.env variables are marked as NEXT_PUBLIC_
+			// calling them in this way (in a loop) requires server side rendering!
+			title: item.title,
+			text: String(process.env[`NEXT_PUBLIC_ME_${item.title.toUpperCase()}`]),
+		}));
+
 	return (
 		<div className={cn(styles.contact, className)}>
 			<div className={cn(styles.wrapper, className)}>
-				<div className={styles.textContainer}>
-					<h1 className={styles.title}>{messages.Contact.title}</h1>
-					<div className={styles.data}>
-						{messages.Contact.items.map((item, index) => (
-							<div key={index} className={styles.dataItem}>
-								<h2>{item.title}</h2>
-								<p
-									dangerouslySetInnerHTML={{
-										// No mather the process.env variables are marked as NEXT_PUBLIC_
-										// calling them in this way (in a loop) requires server side rendering!
-										__html: String(process.env[`NEXT_PUBLIC_ME_${item.title.toUpperCase()}`]),
-									}}
-								/>
-							</div>
-						))}
-					</div>
-				</div>
-				<div className={styles.formContainer}>
-					<ContactForm sendEmail={sendEmail} />
-				</div>
+				<ContactText textItems={textItems} title={messages.Contact.title} />
+				<ContactForm sendEmail={sendEmail} />
 			</div>
 		</div>
 	);

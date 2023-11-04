@@ -24,6 +24,8 @@ import {
 
 import messages from "@/messages/en.json";
 
+import { cn } from "@/lib/cn-utils";
+
 import styles from "./_contact.module.scss";
 
 import type { SendEmail } from "./Contact";
@@ -45,10 +47,11 @@ const formSchema = z.object({
 export type FormDataType = z.infer<typeof formSchema>;
 
 interface Props {
+	className?: string;
 	sendEmail: SendEmail;
 }
 
-const ContactForm: React.FC<Props> = ({ sendEmail }) => {
+const ContactForm: React.FC<Props> = ({ className, sendEmail }) => {
 	const { toast } = useToast();
 
 	const form = useForm<FormDataType>({
@@ -71,9 +74,9 @@ const ContactForm: React.FC<Props> = ({ sendEmail }) => {
 		});
 
 		try {
-			const res = await sendEmail(formData);
+			const response = await sendEmail(formData);
 
-			if (res.ok) {
+			if (response.ok) {
 				form.reset();
 
 				toast({
@@ -87,7 +90,7 @@ const ContactForm: React.FC<Props> = ({ sendEmail }) => {
 					),
 				});
 			} else {
-				throw new Error("Error sending email: " + res.error);
+				throw new Error("Error sending email: " + response.error);
 			}
 		} catch (error) {
 			console.error(error);
@@ -107,74 +110,76 @@ const ContactForm: React.FC<Props> = ({ sendEmail }) => {
 	}
 
 	return (
-		<Form {...form}>
-			<form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
-				<FormField
-					control={form.control}
-					name="name"
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel className={styles.fieldLabel}>{formMsgs.name.label}</FormLabel>
-							<FormControl>
-								<Input placeholder={formMsgs.name.placeholder} {...field} />
-							</FormControl>
-							{form.formState?.errors?.name ? (
-								<FormMessage />
-							) : (
-								<FormDescription>{formMsgs.name.description}</FormDescription>
-							)}
-						</FormItem>
-					)}
-				/>
+		<div className={cn(styles.formContainer, className)}>
+			<Form {...form}>
+				<form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
+					<FormField
+						control={form.control}
+						name="name"
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel className={styles.fieldLabel}>{formMsgs.name.label}</FormLabel>
+								<FormControl>
+									<Input placeholder={formMsgs.name.placeholder} {...field} autoComplete="name" />
+								</FormControl>
+								{form.formState?.errors?.name ? (
+									<FormMessage />
+								) : (
+									<FormDescription>{formMsgs.name.description}</FormDescription>
+								)}
+							</FormItem>
+						)}
+					/>
 
-				<FormField
-					control={form.control}
-					name="email"
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel className={styles.fieldLabel}>{formMsgs.email.label}</FormLabel>
-							<FormControl>
-								<Input placeholder={formMsgs.email.placeholder} {...field} />
-							</FormControl>
-							{form.formState?.errors?.email ? (
-								<FormMessage />
-							) : (
-								<FormDescription>{formMsgs.email.description}</FormDescription>
-							)}
-						</FormItem>
-					)}
-				/>
+					<FormField
+						control={form.control}
+						name="email"
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel className={styles.fieldLabel}>{formMsgs.email.label}</FormLabel>
+								<FormControl>
+									<Input placeholder={formMsgs.email.placeholder} {...field} autoComplete="email" />
+								</FormControl>
+								{form.formState?.errors?.email ? (
+									<FormMessage />
+								) : (
+									<FormDescription>{formMsgs.email.description}</FormDescription>
+								)}
+							</FormItem>
+						)}
+					/>
 
-				<FormField
-					control={form.control}
-					name="message"
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel className={styles.fieldLabel}>{formMsgs.message.label}</FormLabel>
-							<FormControl>
-								<Textarea
-									className="resize-none"
-									placeholder={formMsgs.message.placeholder}
-									{...field}
-								/>
-							</FormControl>
-							{form.formState?.errors?.message ? (
-								<FormMessage />
-							) : (
-								<FormDescription>{formMsgs.message.description}</FormDescription>
-							)}
-						</FormItem>
-					)}
-				/>
+					<FormField
+						control={form.control}
+						name="message"
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel className={styles.fieldLabel}>{formMsgs.message.label}</FormLabel>
+								<FormControl>
+									<Textarea
+										className="resize-none"
+										placeholder={formMsgs.message.placeholder}
+										{...field}
+									/>
+								</FormControl>
+								{form.formState?.errors?.message ? (
+									<FormMessage />
+								) : (
+									<FormDescription>{formMsgs.message.description}</FormDescription>
+								)}
+							</FormItem>
+						)}
+					/>
 
-				<Button className={styles.button} type="submit">
-					<span className={styles.btnText}>{messages.Buttons.submit}</span>
-					<span className={styles.btnIcon}>
-						<BsSendPlus />
-					</span>
-				</Button>
-			</form>
-		</Form>
+					<Button className={styles.button} type="submit">
+						<span className={styles.btnText}>{messages.Buttons.submit}</span>
+						<span className={styles.btnIcon}>
+							<BsSendPlus />
+						</span>
+					</Button>
+				</form>
+			</Form>
+		</div>
 	);
 };
 

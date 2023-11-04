@@ -1,20 +1,20 @@
 @import "@/app/globals.variables.module.scss";
 
 .contact {
-	@apply m-auto h-full select-none flex justify-center items-center w-full max-w-screen-1xl;
+	@apply mx-auto my-12 sa:my-auto h-full select-none flex justify-center items-start sa:items-center w-full max-w-screen-1xl;
 
 	.wrapper {
-		@apply h-fit flex gap-6 sm:gap-10 justify-start sa:justify-center w-full;
+		@apply h-fit grid sa:grid-cols-2 gap-6 sa:gap-10 justify-start sa:justify-center w-full items-start;
 
 		.textContainer {
-			@apply h-full flex flex-col z-10 relative w-fit gap-6 sm:gap-10 justify-start sa:justify-center;
+			@apply flex flex-col sm:flex-row sa:flex-col z-10 relative w-full gap-6 sa:gap-10 justify-start
+			bg-accent/10 dark:bg-accent/5 p-6 rounded-xl flex-grow h-full;
 
 			.title {
 				@apply text-foreground font-extrabold
-					max-w-[8.8em]
-					text-5xl leading-[1em]
-					sa:text-4xl sa:leading-[1em]
-					ma:text-5xl ma:leading-[1em]
+					sm:max-w-[8.8em]
+					text-3xl leading-[1em]
+					sm:text-5xl sm:leading-[1em]
 					ml:text-6xl ml:leading-[1em];
 			}
 
@@ -29,9 +29,7 @@
 		}
 
 		.formContainer {
-			@apply w-full h-fit flex flex-col flex-grow relative
-				gap-6 sm:gap-10
-				justify-start sa:justify-center;
+			@apply w-full flex-grow h-fit flex flex-col relative gap-3 sm:gap-6 px-2 py-0 sa:px-0 sa:py-2;
 
 			.fieldLabel {
 				@apply text-lg;
