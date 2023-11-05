@@ -173,7 +173,7 @@
 			"bestRegards": "Best regards,"
 		},
 		"emailContentAdmin": {
-			"subject": "New client message at Animated Portfolio",
+			"subject": "New client message at { site_name }",
 			"message": "Message:",
 			"name": "Client name:",
 			"email": "Client email:"
