@@ -145,7 +145,11 @@
 		"toast": {
 			"submitted": "You submitted the following values:",
 			"success": "Your message was successfully sent.",
-			"error": "Something went wrong. Please try again."
+			"error": "Something went wrong. Please try again.",
+			"reCaptcha": {
+				"selfError": "Something went wrong with reCaptcha API. Please try again.",
+				"scoreError": "Please verify that you are not a robot."
+			}
 		},
 		"items": [
 			{

@@ -252,3 +252,9 @@ main > div > section {
 		@apply bg-gradient-to-b from-background-to to-background;
 	}
 }
+
+/* reCaptcha */
+.grecaptcha-badge {
+	z-index: 40;
+	translate: 100px -60px;
+}

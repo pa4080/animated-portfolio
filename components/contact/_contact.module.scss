@@ -1,10 +1,10 @@
 @import "@/app/globals.variables.module.scss";
 
 .contact {
-	@apply mx-auto my-12 sa:my-auto h-full select-none flex justify-center items-start sa:items-center w-full max-w-screen-1xl;
+	@apply relative mx-auto my-12 sa:my-auto h-full select-none flex justify-center items-start sa:items-center w-full max-w-screen-1xl;
 
 	.wrapper {
-		@apply h-fit grid sa:grid-cols-2 gap-10 justify-start sa:justify-center w-full items-start;
+		@apply h-fit grid sa:grid-cols-2 gap-10 w-full;
 
 		.textContainer {
 			@apply flex flex-col sm:flex-row sa:flex-col z-10 relative w-full gap-6 sa:gap-10 justify-start
