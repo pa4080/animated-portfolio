@@ -119,11 +119,12 @@ const ContactForm: React.FC<Props> = ({ className, sendEmail }) => {
 		<div ref={ref} className={cn(styles.formContainer, className)}>
 			<Form {...form}>
 				<motion.form
+					animate={isInView && { opacity: 1 }}
 					className={styles.form}
 					initial={{ opacity: 0 }}
 					transition={{ delay: 4.5, duration: 1 }}
-					whileInView={{ opacity: 1 }}
 					onSubmit={form.handleSubmit(onSubmit)}
+					// whileInView={{ opacity: 1 }}
 				>
 					<FormField
 						control={form.control}
@@ -193,10 +194,11 @@ const ContactForm: React.FC<Props> = ({ className, sendEmail }) => {
 			</Form>
 
 			<motion.div
+				animate={isInView && { opacity: 0 }}
 				className={styles.formCoverSvg}
 				initial={{ opacity: 1 }}
 				transition={{ delay: 3.5, duration: 1 }}
-				whileInView={{ opacity: 0 }}
+				// whileInView={{ opacity: 0 }}
 			>
 				<svg
 					fill="none"
