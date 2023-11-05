@@ -25,13 +25,13 @@
 		--secondary-foreground: 222.2 47.4% 11.2%;
 		--muted: 210 40% 96.1%;
 		--muted-foreground: 215.4 16.3% 46.9%;
-		--accent: 38 100% 50%; /* hsl(32, 100%, 50%) #ffa200 hsl(38, 100%, 50%) */
+		--accent: 32 100% 50%; /* hsl32, 100%, 50%) #ffa200 hsl(38, 100%, 50%) */
 		--accent-foreground: 0, 0%, 24%; /* hsl(0, 0%, 24%) */
 		--destructive: 0 84.2% 60.2%;
 		--destructive-foreground: 210 40% 98%;
 		--border: 214.3 31.8% 91.4%;
 		--input: 217.24deg 32.58% 17.45%; /* hsl(217 32% 17%) */
-		--ring: 42 100% 50%; /* hsl(38, 100%, 50%)  hsl(46, 100%, 50%) */
+		--ring: 32 100% 50%; /* hsl(32, 100%, 50%)  hsl(46, 100%, 50%) */
 
 		// common
 		--radius: 0.5rem;
@@ -181,8 +181,7 @@ section {
 	html,
 	body,
 	main,
-	#Portfolio,
-	#Services {
+	section {
 		height: vh(100);
 	}
 
@@ -192,7 +191,6 @@ section {
 	}
 
 	section {
-		height: vh(100);
 		scroll-snap-align: center;
 	}
 }
@@ -253,4 +251,10 @@ main > div > section {
 	&:nth-of-type(even) {
 		@apply bg-gradient-to-b from-background-to to-background;
 	}
+}
+
+/* reCaptcha */
+.grecaptcha-badge {
+	z-index: 40;
+	translate: 100px -60px;
 }

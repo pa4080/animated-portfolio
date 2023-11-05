@@ -1,6 +1,8 @@
 import React from "react";
-// import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/react";
 import { cookies } from "next/headers";
+
+import { Toaster } from "@/components/ui/toaster";
 
 import "./globals.scss";
 
@@ -56,8 +58,12 @@ const RootLayout: React.FC<Props> = ({ children }) => {
 					`${inter.variable} ${roboto_slab.variable} ${unicephalon.variable} `
 				}
 			>
-				<AppContextProvider theme={switchTheme()}>{children}</AppContextProvider>
-				{/* <Analytics /> */}
+				<AppContextProvider theme={switchTheme()}>
+					{children}
+					<Toaster />
+				</AppContextProvider>
+
+				{process.env.VERCEL_ENV === "production" && <Analytics />}
 			</body>
 		</html>
 	);

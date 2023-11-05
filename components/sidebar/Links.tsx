@@ -3,10 +3,6 @@ import { Variants, motion } from "framer-motion";
 
 import { cn } from "@/lib/cn-utils";
 
-interface Props {
-	className?: string;
-}
-
 const variants: Variants = {
 	open: {
 		transition: {
@@ -32,7 +28,12 @@ const itemVariants: Variants = {
 	},
 };
 
-const Links: React.FC<Props> = ({ className }) => {
+interface Props {
+	className?: string;
+	onClick?: () => void;
+}
+
+const Links: React.FC<Props> = ({ className, onClick }) => {
 	const items = ["Homepage", "Services", "Portfolio", "Contact", "About"];
 
 	return (
@@ -44,7 +45,9 @@ const Links: React.FC<Props> = ({ className }) => {
 					whileHover={{ scale: 1.1, transition: { duration: 0.02 } }}
 					whileTap={{ scale: 0.95, transition: { duration: 0.02 } }}
 				>
-					<a href={`#${item}`}>{item}</a>
+					<a href={`#${item}`} onClick={onClick}>
+						{item}
+					</a>
 				</motion.div>
 			))}
 		</motion.div>

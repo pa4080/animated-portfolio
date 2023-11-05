@@ -102,6 +102,7 @@ const Hero: React.FC<Props> = ({ className }) => {
 						<div className="-translate-y-12">
 							<motion.div animate="scrollButton" variants={textVariants}>
 								<Image
+									priority
 									alt={messages.Hero.scrollImageAlt}
 									className={styles.scrollImage + " invert dark:invert-0"}
 									src={scroll_image}
