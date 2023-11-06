@@ -2,6 +2,23 @@
 
 This project is based on the Lama Dev's YouTube tutorial [Animated Portfolio Website with React & Framer Motion](https://youtu.be/CHGHuF24Cjw?si=2nGDLPBEXwe-Wr1o). Here is a Next.js 13 version of the project from the tutorial, also it uses [Tailwind CSS](https://tailwindcss.com/), [Shadcn/UI](https://ui.shadcn.com/) and some additional features.
 
+## Features and technologies in use
+
+- Next.js 14
+  - Server actions
+  - Custom React hooks
+- Tailwind CSS, custom theme
+- Sass CSS
+- Shadcn/UI components
+- Dark, light and system mode
+- Framer Motion
+- Parallax images with scrolling
+- SVG animation
+- Custom fonts and logo
+- Resend for email sending
+- Dorm validation with React hook form and Zod
+- Google reCaptcha v3 for spam prevention
+
 ## References and credits
 
 - [Animated Portfolio Website with React & Framer Motion](https://youtu.be/CHGHuF24Cjw?si=2nGDLPBEXwe-Wr1o)
