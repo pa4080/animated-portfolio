@@ -1,0 +1,33 @@
+@import "@/app/globals.variables.module.scss";
+
+.about {
+	@apply relative mx-auto my-12 sa:my-auto h-full select-none flex justify-center items-start sa:items-center w-full max-w-screen-1xl;
+
+	.wrapper {
+		@apply h-fit grid xl:grid-cols-2 gap-10 w-full;
+
+		.contentMd {
+			@apply first-letter:flex flex-col sm:flex-row sa:flex-col z-10 relative w-full gap-6 sa:gap-10 justify-start
+			bg-accent/10 dark:bg-accent/5 p-6 rounded-xl flex-grow h-fit;
+
+			h1 {
+				@apply text-foreground font-extrabold mb-6
+					text-3xl leading-[1em]
+					sm:text-5xl sm:leading-[1em]
+					ml:text-6xl ml:leading-[1em];
+			}
+
+			p {
+				@apply mb-4 last-of-type:mb-0;
+			}
+
+			a {
+				@apply inline-block px-1 -mx-1 rounded-sm text-accent transition-colors duration-100;
+
+				&:hover {
+					@apply bg-accent text-background transition-colors duration-300;
+				}
+			}
+		}
+	}
+}

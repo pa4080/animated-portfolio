@@ -8,6 +8,7 @@ import Services from "@/components/services/Services";
 import Portfolio from "@/components/portfolio/Portfolio";
 import Contact from "@/components/contact/Contact";
 import Cursor from "@/components/cursor/Cursor";
+import About from "@/components/about/About";
 
 /**
  * Refs. about the grid layout
@@ -37,7 +38,9 @@ const Home: React.FC = () => {
 			<section id="Contact">
 				<Contact />
 			</section>
-			<section id="About">About</section>
+			<section id="About">
+				<About />
+			</section>
 		</main>
 	);
 };

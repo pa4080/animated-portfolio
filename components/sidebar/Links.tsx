@@ -72,8 +72,8 @@ const Links: React.FC<Props> = ({ className, onClick }) => {
 					whileTap={{ scale: 0.95, transition: { duration: 0.02 } }}
 					onClick={onClick}
 				>
-					<div className={styles.icon}>{Icons[item.toLowerCase() as keyof typeof Icons]}</div>
-					<div className={styles.label}>{item}</div>
+					<div>{Icons[item.toLowerCase() as keyof typeof Icons]}</div>
+					<div>{item}</div>
 				</motion.a>
 			))}
 		</motion.div>

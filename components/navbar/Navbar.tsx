@@ -12,9 +12,10 @@ import SocialLinks from "./SocialLinks";
 
 interface Props {
 	className?: string;
+	addSidebar?: boolean;
 }
 
-const Navbar: React.FC<Props> = ({ className }) => {
+const Navbar: React.FC<Props> = ({ className, addSidebar = true }) => {
 	return (
 		<div className={cn(styles.navbar, className)}>
 			<div className={styles.wrapper}>
@@ -26,7 +27,7 @@ const Navbar: React.FC<Props> = ({ className }) => {
 					<ThemeSelector className="opacity-0 animate-fadeIn" />
 				</div>
 			</div>
-			<Sidebar />
+			{addSidebar && <Sidebar />}
 		</div>
 	);
 };

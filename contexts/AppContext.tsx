@@ -5,8 +5,6 @@ import React, { createContext, useContext, useState } from "react";
 import messages from "@/messages/en.json";
 import { ThemeType } from "@/components/theme-selector/ThemeSelectorCore";
 
-const theme: ThemeType = "system";
-
 interface AppContextProps {
 	messages: typeof messages;
 	theme?: ThemeType;
@@ -18,9 +16,14 @@ const AppContext = createContext<AppContextProps>({} as AppContextProps);
 
 interface AppContextProviderProps {
 	children: React.ReactNode;
+	theme?: ThemeType;
 }
 
-export const AppContextProvider: React.FC<AppContextProviderProps> = ({ children }) => {
+// The theme will be defined via the main layout.tsx
+export const AppContextProvider: React.FC<AppContextProviderProps> = ({
+	children,
+	theme = "system",
+}) => {
 	const [fancyCursor, setFancyCursor] = useState(false);
 
 	return (
