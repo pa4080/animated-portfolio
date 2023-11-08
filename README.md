@@ -1,5 +1,9 @@
 # Animated Portfolio
 
+[![image](public/images/screenshots/animated-portfolio_light_01.png)](https://animated-portfolio.metalevel.tech/)
+
+[![image](public/images/screenshots/animated-portfolio_dark_02.png)](https://animated-portfolio.metalevel.tech/)
+
 This project is based on the Lama Dev's YouTube tutorial [Animated Portfolio Website with React & Framer Motion](https://youtu.be/CHGHuF24Cjw?si=2nGDLPBEXwe-Wr1o). Here is a Next.js 13 version of the project from the tutorial, also it uses [Tailwind CSS](https://tailwindcss.com/), [Shadcn/UI](https://ui.shadcn.com/) and some additional features.
 
 ## Features and technologies in use
