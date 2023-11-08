@@ -1,9 +1,22 @@
 import React from "react";
 import { Variants, motion } from "framer-motion";
 
+import { FaGithub, FaHome, FaDev, FaHighlighter } from "react-icons/fa";
+import { MdOutlineAlternateEmail } from "react-icons/md";
+
 import { cn } from "@/lib/cn-utils";
 import { Switch } from "@/components/ui/switch";
 import { useAppContext } from "@/contexts/AppContext";
+
+import styles from "./_sidebar.module.scss";
+
+const Icons = {
+	about: <FaGithub />,
+	homepage: <FaHome />,
+	services: <FaDev />,
+	portfolio: <FaHighlighter />,
+	contact: <MdOutlineAlternateEmail />,
+};
 
 const variants: Variants = {
 	open: {
@@ -36,9 +49,11 @@ interface Props {
 }
 
 const Links: React.FC<Props> = ({ className, onClick }) => {
-	const items = ["Homepage", "Services", "Portfolio", "Contact", "About"];
-
-	const { fancyCursor, setFancyCursor } = useAppContext();
+	const {
+		fancyCursor,
+		setFancyCursor,
+		messages: { Sections: items },
+	} = useAppContext();
 
 	return (
 		<motion.div className={cn("relative", className)} variants={variants}>
@@ -48,16 +63,18 @@ const Links: React.FC<Props> = ({ className, onClick }) => {
 				onCheckedChange={setFancyCursor}
 			/>
 			{items.map((item, index) => (
-				<motion.div
+				<motion.a
 					key={index}
+					className={styles.sidebarLinks}
+					href={`#${item}`}
 					variants={itemVariants}
 					whileHover={{ scale: 1.1, transition: { duration: 0.02 } }}
 					whileTap={{ scale: 0.95, transition: { duration: 0.02 } }}
+					onClick={onClick}
 				>
-					<a href={`#${item}`} onClick={onClick}>
-						{item}
-					</a>
-				</motion.div>
+					<div className={styles.icon}>{Icons[item.toLowerCase() as keyof typeof Icons]}</div>
+					<div className={styles.label}>{item}</div>
+				</motion.a>
 			))}
 		</motion.div>
 	);

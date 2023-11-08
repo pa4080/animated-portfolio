@@ -12,6 +12,7 @@
 	"Navbar": {
 		"logoDesc": "The site logo"
 	},
+	"Sections": ["Homepage", "Services", "Portfolio", "Contact", "About"],
 	"Buttons": {
 		"submit": "Submit",
 		"cancel": "Cancel",
