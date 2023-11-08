@@ -18,7 +18,7 @@ interface Props {
 
 const variants: Variants = {
 	open: {
-		clipPath: "circle(1200px at 48px 48px)",
+		clipPath: "circle(3200px at 48px 48px)",
 		opacity: 1,
 		transition: {
 			type: "spring",
@@ -73,6 +73,13 @@ const Sidebar: React.FC<Props> = ({ className }) => {
 			animate={open ? "open" : "closed"}
 			className={cn(styles.sidebar, className)}
 		>
+			{open && (
+				<motion.div
+					animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5 } }}
+					className={styles.background}
+					initial={{ opacity: 0 }}
+				/>
+			)}
 			<motion.div
 				className={cn(styles.wrapper)}
 				data-state={open ? "open" : "closed"}
@@ -82,6 +89,7 @@ const Sidebar: React.FC<Props> = ({ className }) => {
 				<Links className={styles.links} onClick={() => setOpen(false)} />
 			</motion.div>
 			<ToggleButton className={styles.toggleButton} onClick={() => setOpen((prev) => !prev)} />
+
 			<ScrollToTop show={show} onClick={scrollTo} />
 		</motion.div>
 	);

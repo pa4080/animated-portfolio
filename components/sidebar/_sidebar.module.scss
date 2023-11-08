@@ -1,23 +1,17 @@
 .sidebar {
 	@apply flex flex-col items-center justify-start z-20 text-background relative;
 
+	.background {
+		@apply fixed left-0 top-0 right-0 bottom-0 w-[200%] h-[200%] bg-accent/5 backdrop-blur-sm;
+	}
 	.wrapper {
 		@apply fixed top-0 left-0 bottom-0 w-80 h-full shadow-[2px_0px_8px_-2px] shadow-background transition-colors duration-1000 data-[state=open]:bg-foreground data-[state=closed]:bg-accent/60;
 
 		.links {
 			@apply absolute w-full h-full flex flex-col items-center justify-center;
 
-			div {
-				@apply my-1 font-unicephalon h-12 w-full text-accent text-center relative transition-transform duration-500 hover:duration-200 active:duration-100;
-				/**
-				 * These props doesn't work, when <motion.div /> is in use:
-				 * "scale-95 hover:scale-110"
-				 * So, we need to use <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.99 }} />
-				 */
-
-				a {
-					@apply text-xl self-center;
-				}
+			.sidebarLinks {
+				@apply text-xl self-center flex items-center justify-center gap-4 w-fit mx-auto my-2 font-unicephalon h-12 text-accent text-center relative transition-transform duration-500 hover:duration-200 active:duration-100;
 			}
 		}
 	}

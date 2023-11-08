@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import messages from "@/messages/en.json";
+import manifest from "@/public/manifest.json";
 
 import { FormDataType } from "../ContactForm";
 
@@ -11,7 +12,7 @@ type EmailTemplateProps = FormDataType;
 const EmailTemplate_Admin: React.FC<Readonly<EmailTemplateProps>> = ({ name, message, email }) => (
 	<div>
 		<p>
-			<b> {msg.subject} </b>
+			<b> {msg.subject.replace(/{\s*site_name\s*}/, manifest.short_name)} </b>
 		</p>
 		<p>
 			{msg.name} <b>{name}</b>

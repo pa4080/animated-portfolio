@@ -2,6 +2,7 @@ import React from "react";
 import { Resend } from "resend";
 
 import messages from "@/messages/en.json";
+import manifest from "@/public/manifest.json";
 import { cn } from "@/lib/cn-utils";
 
 import styles from "./_contact.module.scss";
@@ -67,7 +68,10 @@ const Contact: React.FC<Props> = ({ className }) => {
 				)}>`,
 				text: formData.message,
 				to: String(process.env.NEXT_PUBLIC_ME_EMAIL),
-				subject: messages.Contact.emailContentAdmin.subject,
+				subject: messages.Contact.emailContentAdmin.subject.replace(
+					/{\s*site_name\s*}/,
+					manifest.short_name
+				),
 				react: EmailTemplate_Admin(formData),
 			});
 

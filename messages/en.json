@@ -12,6 +12,7 @@
 	"Navbar": {
 		"logoDesc": "The site logo"
 	},
+	"Sections": ["Homepage", "Services", "Portfolio", "Contact", "About"],
 	"Buttons": {
 		"submit": "Submit",
 		"cancel": "Cancel",
@@ -173,7 +174,7 @@
 			"bestRegards": "Best regards,"
 		},
 		"emailContentAdmin": {
-			"subject": "New client message at Animated Portfolio",
+			"subject": "New client message at { site_name }",
 			"message": "Message:",
 			"name": "Client name:",
 			"email": "Client email:"
