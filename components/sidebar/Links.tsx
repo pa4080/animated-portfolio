@@ -2,6 +2,8 @@ import React from "react";
 import { Variants, motion } from "framer-motion";
 
 import { cn } from "@/lib/cn-utils";
+import { Switch } from "@/components/ui/switch";
+import { useAppContext } from "@/contexts/AppContext";
 
 const variants: Variants = {
 	open: {
@@ -36,8 +38,15 @@ interface Props {
 const Links: React.FC<Props> = ({ className, onClick }) => {
 	const items = ["Homepage", "Services", "Portfolio", "Contact", "About"];
 
+	const { fancyCursor, setFancyCursor } = useAppContext();
+
 	return (
-		<motion.div className={cn("", className)} variants={variants}>
+		<motion.div className={cn("relative", className)} variants={variants}>
+			<Switch
+				checked={fancyCursor}
+				className="absolute top-10 right-8 z-50"
+				onCheckedChange={setFancyCursor}
+			/>
 			{items.map((item, index) => (
 				<motion.div
 					key={index}

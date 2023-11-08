@@ -7,6 +7,8 @@ import { cn } from "@/lib/cn-utils";
 
 import { useBreakpoint } from "@/hooks/useBreakpoint";
 
+import { useAppContext } from "@/contexts/AppContext";
+
 import styles from "./_cursor.module.scss";
 
 interface Props {
@@ -14,6 +16,7 @@ interface Props {
 }
 
 const Cursor: React.FC<Props> = ({ className }) => {
+	const { fancyCursor } = useAppContext();
 	const { isAboveMd } = useBreakpoint("md");
 	const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -30,7 +33,8 @@ const Cursor: React.FC<Props> = ({ className }) => {
 	}, []);
 
 	return (
-		isAboveMd && (
+		isAboveMd &&
+		fancyCursor && (
 			<motion.div
 				animate={{
 					x: position.x,

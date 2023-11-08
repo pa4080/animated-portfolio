@@ -89,6 +89,7 @@ const Sidebar: React.FC<Props> = ({ className }) => {
 				<Links className={styles.links} onClick={() => setOpen(false)} />
 			</motion.div>
 			<ToggleButton className={styles.toggleButton} onClick={() => setOpen((prev) => !prev)} />
+
 			<ScrollToTop show={show} onClick={scrollTo} />
 		</motion.div>
 	);
