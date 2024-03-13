@@ -48,7 +48,7 @@ const SocialLinks: React.FC<Props> = ({ className }) => {
 		>
 			{links.reverse().map((link, index) => (
 				<motion.li key={index} custom={index} variants={variants}>
-					<a href={link.href} target="_blank">
+					<a href={link.href} referrerPolicy="no-referrer" target="_blank">
 						{link.icon}
 					</a>
 				</motion.li>

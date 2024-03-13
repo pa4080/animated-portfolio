@@ -22,7 +22,7 @@ const SingleProjectContent: React.FC<Props> = ({ name, description, link, projec
 		<div className={styles.buttons}>
 			{project ? (
 				<div>
-					<a href={project} target="_blank">
+					<a href={project} referrerPolicy="no-referrer" target="_blank">
 						<p className={styles.btnText}>{messages.Portfolio.viewRepo}</p>
 						<div className={styles.btnIcon}>
 							<FaGithubAlt />
@@ -34,7 +34,7 @@ const SingleProjectContent: React.FC<Props> = ({ name, description, link, projec
 			)}
 			{link ? (
 				<div>
-					<a href={link} target="_blank">
+					<a href={link} referrerPolicy="no-referrer" target="_blank">
 						<p className={styles.btnText}>{messages.Portfolio.viewProject}</p>
 						<div className={styles.btnIcon}>
 							<FaExternalLinkSquareAlt />
